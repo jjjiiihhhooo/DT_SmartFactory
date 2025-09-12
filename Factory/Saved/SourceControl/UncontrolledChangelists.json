@@ -5,7 +5,9 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Map/Factory.umap"
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Map/Factory.umap",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/BP_Sell.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/BP_Delivery.uasset"
 			]
 		}
 	]

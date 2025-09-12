@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\deliverycontroller.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\factoryeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\factory\\definitions.factory.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\deliverycontroller.h",
+            "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\aimodule\\classes\\aicontroller.h",
+            "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\aimodule\\classes\\aitypes.h",
+            "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\navigationsystem\\public\\navigationsystemtypes.h",
+            "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\ai\\navigation\\navagentselector.h",
+            "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\navagentselector.generated.h",
+            "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\aimodule\\uht\\aitypes.generated.h",
+            "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\aimodule\\classes\\perception\\aiperceptionlistenerinterface.h",
+            "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\aimodule\\uht\\aiperceptionlistenerinterface.generated.h",
+            "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\aimodule\\classes\\genericteamagentinterface.h",
+            "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\aimodule\\uht\\genericteamagentinterface.generated.h",
+            "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\engine\\public\\visuallogger\\visualloggerdebugsnapshotinterface.h",
+            "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\visualloggerdebugsnapshotinterface.generated.h",
+            "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\aimodule\\uht\\aicontroller.generated.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\unrealeditor\\inc\\factory\\uht\\deliverycontroller.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

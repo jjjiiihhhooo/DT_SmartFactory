@@ -11,6 +11,7 @@
     <None Include="..\..\Source\FactoryEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -29,6 +30,12 @@
     <Filter Include="Source\Factory">
       <UniqueIdentifier>{CF6126D9-5AE1-3600-9593-09C9CFB40084}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Factory\DeliveryController.cpp">
+      <Filter>Source\Factory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\DeliveryController.h">
+      <Filter>Source\Factory</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Factory\Factory.Build.cs">
       <Filter>Source\Factory</Filter>
     </None>
@@ -36,6 +43,18 @@
       <Filter>Source\Factory</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Factory\Factory.h">
+      <Filter>Source\Factory</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Factory\Manager.cpp">
+      <Filter>Source\Factory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\Manager.h">
+      <Filter>Source\Factory</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Factory\Spawner.cpp">
+      <Filter>Source\Factory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\Spawner.h">
       <Filter>Source\Factory</Filter>
     </ClInclude>
   </ItemGroup>
