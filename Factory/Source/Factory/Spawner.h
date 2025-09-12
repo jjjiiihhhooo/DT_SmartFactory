@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GameFramework/Pawn.h"
+#include "GameFramework/Character.h"
 #include "Containers/Queue.h"
 #include "Spawner.generated.h"
 
@@ -19,26 +19,26 @@ public:
 private:
 	void InitPool();
 	void CreateDelivery();
-	void DeliveryEnqueue(APawn* Delivery);
+	void DeliveryEnqueue(ACharacter* Delivery);
 
 	UPROPERTY()
-	TSet<APawn*> AllPooled;
+	TSet<ACharacter*> AllPooled;
 
-	TQueue<APawn*> DeliveryQueue;
+	TQueue<ACharacter*> DeliveryQueue;
 
 	int32 Count;
 public:
 	UFUNCTION(BlueprintCallable, Category = "Pool")
-	APawn* GetDelivery();
+	ACharacter* GetDelivery();
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
-	void ReturnDelivery(APawn* Delivery);
+	void ReturnDelivery(ACharacter* Delivery);
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
 	int32 GetCount();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")
-	TSubclassOf<APawn> DeliveryClass;
+	TSubclassOf<ACharacter> DeliveryClass;
 
 	
 };

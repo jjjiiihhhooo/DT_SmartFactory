@@ -16,7 +16,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
-class APawn;
+class ACharacter;
 
 // ********** Begin Class ASpawner *****************************************************************
 #define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_RPC_WRAPPERS_NO_PURE_DECLS \

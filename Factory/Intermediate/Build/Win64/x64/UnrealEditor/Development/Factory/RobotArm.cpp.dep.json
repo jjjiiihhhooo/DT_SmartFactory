@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\robotarm.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\factoryeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\factory\\definitions.factory.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\robotarm.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\unrealeditor\\inc\\factory\\uht\\robotarm.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

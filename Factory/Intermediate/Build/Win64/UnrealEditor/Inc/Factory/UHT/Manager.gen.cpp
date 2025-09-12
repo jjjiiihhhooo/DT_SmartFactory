@@ -12,15 +12,113 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeManager() {}
 
 // ********** Begin Cross Module References ********************************************************
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 FACTORY_API UClass* Z_Construct_UClass_AManager();
 FACTORY_API UClass* Z_Construct_UClass_AManager_NoRegister();
+FACTORY_API UClass* Z_Construct_UClass_ASell_NoRegister();
+FACTORY_API UClass* Z_Construct_UClass_ASpawner_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Factory();
 // ********** End Cross Module References **********************************************************
+
+// ********** Begin Class AManager Function Run ****************************************************
+struct Z_Construct_UFunction_AManager_Run_Statics
+{
+	struct Manager_eventRun_Parms
+	{
+		float DeltaTime;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Manager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DeltaTime;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AManager_Run_Statics::NewProp_DeltaTime = { "DeltaTime", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Manager_eventRun_Parms, DeltaTime), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AManager_Run_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AManager_Run_Statics::NewProp_DeltaTime,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AManager_Run_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AManager_Run_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AManager, nullptr, "Run", Z_Construct_UFunction_AManager_Run_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AManager_Run_Statics::PropPointers), sizeof(Z_Construct_UFunction_AManager_Run_Statics::Manager_eventRun_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AManager_Run_Statics::Function_MetaDataParams), Z_Construct_UFunction_AManager_Run_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AManager_Run_Statics::Manager_eventRun_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AManager_Run()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AManager_Run_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AManager::execRun)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_DeltaTime);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->Run(Z_Param_DeltaTime);
+	P_NATIVE_END;
+}
+// ********** End Class AManager Function Run ******************************************************
+
+// ********** Begin Class AManager Function SetReady ***********************************************
+struct Z_Construct_UFunction_AManager_SetReady_Statics
+{
+	struct Manager_eventSetReady_Parms
+	{
+		bool Ready;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Manager.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_Ready_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_Ready;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AManager_SetReady_Statics::NewProp_Ready_SetBit(void* Obj)
+{
+	((Manager_eventSetReady_Parms*)Obj)->Ready = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AManager_SetReady_Statics::NewProp_Ready = { "Ready", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Manager_eventSetReady_Parms), &Z_Construct_UFunction_AManager_SetReady_Statics::NewProp_Ready_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AManager_SetReady_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AManager_SetReady_Statics::NewProp_Ready,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AManager_SetReady_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AManager_SetReady_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AManager, nullptr, "SetReady", Z_Construct_UFunction_AManager_SetReady_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AManager_SetReady_Statics::PropPointers), sizeof(Z_Construct_UFunction_AManager_SetReady_Statics::Manager_eventSetReady_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AManager_SetReady_Statics::Function_MetaDataParams), Z_Construct_UFunction_AManager_SetReady_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AManager_SetReady_Statics::Manager_eventSetReady_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AManager_SetReady()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AManager_SetReady_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AManager::execSetReady)
+{
+	P_GET_UBOOL(Z_Param_Ready);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SetReady(Z_Param_Ready);
+	P_NATIVE_END;
+}
+// ********** End Class AManager Function SetReady *************************************************
 
 // ********** Begin Class AManager *****************************************************************
 void AManager::StaticRegisterNativesAManager()
 {
+	UClass* Class = AManager::StaticClass();
+	static const FNameNativePtrPair Funcs[] = {
+		{ "Run", &AManager::execRun },
+		{ "SetReady", &AManager::execSetReady },
+	};
+	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
 FClassRegistrationInfo Z_Registration_Info_UClass_AManager;
 UClass* AManager::GetPrivateStaticClass()
@@ -58,13 +156,74 @@ struct Z_Construct_UClass_AManager_Statics
 		{ "IncludePath", "Manager.h" },
 		{ "ModuleRelativePath", "Manager.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OrderCount_MetaData[] = {
+		{ "Category", "Manager" },
+		{ "ModuleRelativePath", "Manager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentCount_MetaData[] = {
+		{ "Category", "Manager" },
+		{ "ModuleRelativePath", "Manager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CompleteCount_MetaData[] = {
+		{ "Category", "Manager" },
+		{ "ModuleRelativePath", "Manager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SellArray_MetaData[] = {
+		{ "Category", "Manager" },
+		{ "ModuleRelativePath", "Manager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Spawner_MetaData[] = {
+		{ "Category", "Manager" },
+		{ "ModuleRelativePath", "Manager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IdlePos_MetaData[] = {
+		{ "Category", "Manager" },
+		{ "ModuleRelativePath", "Manager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TestSpeed_MetaData[] = {
+		{ "Category", "Manager" },
+		{ "ModuleRelativePath", "Manager.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_OrderCount;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentCount;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_CompleteCount;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SellArray_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_SellArray;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Spawner;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_IdlePos;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_TestSpeed;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
+	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AManager_Run, "Run" }, // 2488119232
+		{ &Z_Construct_UFunction_AManager_SetReady, "SetReady" }, // 2576634675
+	};
+	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AManager>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_OrderCount = { "OrderCount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, OrderCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OrderCount_MetaData), NewProp_OrderCount_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_CurrentCount = { "CurrentCount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, CurrentCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentCount_MetaData), NewProp_CurrentCount_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_CompleteCount = { "CompleteCount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, CompleteCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CompleteCount_MetaData), NewProp_CompleteCount_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_SellArray_Inner = { "SellArray", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ASell_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_SellArray = { "SellArray", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, SellArray), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SellArray_MetaData), NewProp_SellArray_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_Spawner = { "Spawner", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, Spawner), Z_Construct_UClass_ASpawner_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Spawner_MetaData), NewProp_Spawner_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_IdlePos = { "IdlePos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, IdlePos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IdlePos_MetaData), NewProp_IdlePos_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_TestSpeed = { "TestSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, TestSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TestSpeed_MetaData), NewProp_TestSpeed_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AManager_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_OrderCount,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_CurrentCount,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_CompleteCount,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_SellArray_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_SellArray,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_Spawner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_IdlePos,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_TestSpeed,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AManager_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AManager_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_AActor,
 	(UObject* (*)())Z_Construct_UPackage__Script_Factory,
@@ -75,12 +234,12 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_AManager_Statics::Class
 	"Engine",
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
-	nullptr,
-	nullptr,
+	FuncInfo,
+	Z_Construct_UClass_AManager_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
-	0,
-	0,
+	UE_ARRAY_COUNT(FuncInfo),
+	UE_ARRAY_COUNT(Z_Construct_UClass_AManager_Statics::PropPointers),
 	0,
 	0x009001A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AManager_Statics::Class_MetaDataParams), Z_Construct_UClass_AManager_Statics::Class_MetaDataParams)
@@ -101,10 +260,10 @@ AManager::~AManager() {}
 struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AManager, AManager::StaticClass, TEXT("AManager"), &Z_Registration_Info_UClass_AManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AManager), 2266161221U) },
+		{ Z_Construct_UClass_AManager, AManager::StaticClass, TEXT("AManager"), &Z_Registration_Info_UClass_AManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AManager), 1411035426U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_1375676366(TEXT("/Script/Factory"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_317892017(TEXT("/Script/Factory"),
 	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
