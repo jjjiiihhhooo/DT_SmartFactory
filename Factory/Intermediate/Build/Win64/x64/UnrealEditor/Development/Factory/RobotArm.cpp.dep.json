@@ -7,7 +7,9 @@
         "Includes": [
             "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\factory\\definitions.factory.h",
             "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\robotarm.h",
-            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\unrealeditor\\inc\\factory\\uht\\robotarm.generated.h"
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\unrealeditor\\inc\\factory\\uht\\robotarm.generated.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\sell.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\unrealeditor\\inc\\factory\\uht\\sell.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

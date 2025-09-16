@@ -7,6 +7,7 @@
 class ASpawner;
 class ADeliveryController;
 class ASell;
+class APartsPos;
 
 UCLASS()
 class FACTORY_API AManager : public AActor
@@ -32,6 +33,12 @@ public:
 	int32 CompleteCount;
 
 public:
+	APartsPos* SelectPartsPos();
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<APartsPos*> PartsPosArray;
+
+public:
 	ASell* SelectSell();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -43,6 +50,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector IdlePos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FVector EndPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FVector EndOutPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FVector ReturnPos;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float TestSpeed;

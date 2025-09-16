@@ -51,6 +51,12 @@
     <ClInclude Include="..\..\Source\Factory\Manager.h">
       <Filter>Source\Factory</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Factory\PartsPos.cpp">
+      <Filter>Source\Factory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\PartsPos.h">
+      <Filter>Source\Factory</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Factory\RobotArm.cpp">
       <Filter>Source\Factory</Filter>
     </ClCompile>

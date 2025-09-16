@@ -2,7 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "AIController.h"
+#include "Navigation/PathFollowingComponent.h"
 #include "DeliveryController.generated.h"
+
+class ASell;
+class APartsPos;
+
 
 UCLASS()
 class FACTORY_API ADeliveryController : public AAIController
@@ -13,19 +18,69 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
-	void MoveToTarget();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector TargetPos;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector EndPos;
+	enum class ECurrentMoveState : uint8
+	{
+		None,
+		MovingToPartsPos,  
+		MovingToTargetPos, 
+		MovingToWorkPos,   
+		MovingToWorkOutPos,
+		MovingToEndPos,	   
+		MovingToEndOutPos,
+		MovingToReturnPos
+	};
 
 public:
-	void SetReady(bool Ready);
+	void AIMoveToTarget();
+	
+	void InterpMoveToTarget(float DeltaTime);
+	void MoveResult();
+
+	void SetMoveTarget(FVector Target, ECurrentMoveState State);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
+	FVector PartsPickPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
+	FVector TargetPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
+	FVector WorkPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
+	FVector WorkOutPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
+	FVector EndPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
+	FVector EndOutPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
+	FVector ReturnPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
+	FVector CurTargetPos;
+
+public:
+	void SetTargetPartsPos(APartsPos* PartsPos);
+
+	APartsPos* TargetPartsPos;
+	AActor* CurAttachedParts;
+public:
+	void SetTargetSell(ASell* Sell);
+
+	ASell* TargetSell;
+
+public:
+	void OnMoveCallback(FAIRequestID RequestID, const FPathFollowingResult& Result);
+
 	void SetMove(bool Move);
 
 private:
-	bool bReady;
+	bool IsMove();
+
 	bool bMove;
+
+	ECurrentMoveState CurrentMoveState;
 };

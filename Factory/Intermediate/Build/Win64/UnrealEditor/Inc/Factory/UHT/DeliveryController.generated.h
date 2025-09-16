@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class ADeliveryController ******************************************************
 FACTORY_API UClass* Z_Construct_UClass_ADeliveryController_NoRegister();
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_10_INCLASS_NO_PURE_DECLS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesADeliveryController(); \
 	friend struct Z_Construct_UClass_ADeliveryController_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(ADeliveryController)
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_10_ENHANCED_CONSTRUCTORS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ADeliveryController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -42,12 +42,12 @@ public: \
 	NO_API virtual ~ADeliveryController();
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_7_PROLOG
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_10_GENERATED_BODY \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_12_PROLOG
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_10_INCLASS_NO_PURE_DECLS \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_10_ENHANCED_CONSTRUCTORS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_15_INCLASS_NO_PURE_DECLS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -19,20 +19,36 @@ public:
 private:
 	void InitPool();
 	void CreateDelivery();
+	void CreateParts();
 	void DeliveryEnqueue(ACharacter* Delivery);
+	void PartsEnqueue(AActor* Parts);
 
 	UPROPERTY()
-	TSet<ACharacter*> AllPooled;
+	TSet<ACharacter*> DeliveryAllPooled;
+	UPROPERTY()
+	TSet<AActor*> PartsAllPooled;
 
 	TQueue<ACharacter*> DeliveryQueue;
+	TQueue<AActor*> PartsQueue;
 
 	int32 Count;
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")
+	FVector SpawnPoint;
+
 public:
 	UFUNCTION(BlueprintCallable, Category = "Pool")
 	ACharacter* GetDelivery();
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
+	AActor* GetParts();
+
+	UFUNCTION(BlueprintCallable, Category = "Pool")
 	void ReturnDelivery(ACharacter* Delivery);
+
+	UFUNCTION(BlueprintCallable, Category = "Pool")
+	void ReturnParts(AActor* Parts);
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
 	int32 GetCount();
@@ -40,5 +56,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")
 	TSubclassOf<ACharacter> DeliveryClass;
 
-	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")
+	TSubclassOf<AActor> PartsClass;
 };

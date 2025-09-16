@@ -2,6 +2,7 @@
 #include "Spawner.h"
 #include "DeliveryController.h"
 #include "Sell.h"
+#include "PartsPos.h"
 
 AManager::AManager()
 {
@@ -12,7 +13,6 @@ AManager::AManager()
 void AManager::BeginPlay()
 {
 	Super::BeginPlay();
-	OrderCount = 10;
 }
 
 void AManager::Tick(float DeltaTime)
@@ -29,27 +29,16 @@ void AManager::Run(float DeltaTime)
 {
 	if (OrderCount <= 0)
 	{
-		UE_LOG(LogTemp, Display, TEXT("OrderCount <= 0"));
 		return;
 	}
 
 	if (ReadyController == nullptr)
 	{
-		UE_LOG(LogTemp, Display, TEXT("ReadyController nullptr"));
-		
 		if (ACharacter* Delivery = Spawner->GetDelivery())
 		{
-			UE_LOG(LogTemp, Display, TEXT("Delivery Suc"));
-
 			if (AController* Controller = Delivery->GetController())
 			{
-				UE_LOG(LogTemp, Display, TEXT("Controller Suc"));
-			
 				ReadyController = Cast<ADeliveryController>(Controller);
-				if (ReadyController != nullptr)
-				{
-					UE_LOG(LogTemp, Display, TEXT("Cast Suc"));
-				}
 			}
 		}
 	}
@@ -59,21 +48,51 @@ void AManager::Run(float DeltaTime)
 		
 		if (FVector::Distance(Pos, IdlePos) > 5.0f)
 		{
-			Pos = FMath::VInterpConstantTo(Pos, IdlePos, DeltaTime, TestSpeed);
+			Pos = FMath::VInterpConstantTo(Pos, IdlePos, DeltaTime, 1000);
 			ReadyController->GetCharacter()->SetActorLocation(Pos);
 		}
 		else
 		{
-			if (ASell* FoundSell = SelectSell())
+			if (APartsPos* FoundPartsPos = SelectPartsPos())
 			{
-				ReadyController->TargetPos = FoundSell->TargetSceneComp->GetComponentLocation();
-				ReadyController->MoveToTarget();
-				ReadyController = nullptr;
-				OrderCount--;
+				if (ASell* FoundSell = SelectSell())
+				{
+					FoundPartsPos->SetSelect(true);
+					FoundSell->SetWorking(true);
+					ReadyController->EndPos = EndPos;
+					ReadyController->EndOutPos = EndOutPos;
+					ReadyController->ReturnPos = ReturnPos;
+					ReadyController->SetTargetSell(FoundSell);
+
+					ReadyController->SetTargetPartsPos(FoundPartsPos);
+					ReadyController->AIMoveToTarget();
+
+					ReadyController = nullptr;
+					OrderCount--;
+				}
 			}
+
+			
 		}
 	}
 }
+
+APartsPos* AManager::SelectPartsPos()
+{
+	for (APartsPos* CurParts : PartsPosArray)
+	{
+		if (CurParts->Parts)
+		{
+			if (!CurParts->IsSelect() && CurParts->IsReady())
+			{
+				return CurParts;
+			}
+		}
+	}
+
+	return nullptr;
+}
+
 
 ASell* AManager::SelectSell()
 {
@@ -83,14 +102,11 @@ ASell* AManager::SelectSell()
 		{
 			if (!CurSell->IsWorking())
 			{
-				UE_LOG(LogTemp, Warning, TEXT("SelectSell True"));
-				CurSell->SetWorking(true);
 				return CurSell;
 			}
 		}
 	}
 
-	UE_LOG(LogTemp, Warning, TEXT("SelectSell null"));
 	return nullptr;
 }
 

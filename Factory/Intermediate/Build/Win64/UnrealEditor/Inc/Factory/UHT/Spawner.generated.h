@@ -16,12 +16,15 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
+class AActor;
 class ACharacter;
 
 // ********** Begin Class ASpawner *****************************************************************
 #define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetCount); \
+	DECLARE_FUNCTION(execReturnParts); \
 	DECLARE_FUNCTION(execReturnDelivery); \
+	DECLARE_FUNCTION(execGetParts); \
 	DECLARE_FUNCTION(execGetDelivery);
 
 

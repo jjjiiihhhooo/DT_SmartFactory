@@ -1,5 +1,6 @@
 #include "Sell.h"
-
+#include "DeliveryController.h"
+#include "RobotArm.h"
 
 ASell::ASell()
 {
@@ -9,6 +10,12 @@ ASell::ASell()
 
 	TargetSceneComp = CreateDefaultSubobject<USceneComponent>(TEXT("TargetScene"));
 	TargetSceneComp->SetupAttachment(RootComponent);
+
+	WorkSceneComp = CreateDefaultSubobject<USceneComponent>(TEXT("WorkScene"));
+	WorkSceneComp->SetupAttachment(RootComponent);
+
+	OutSceneComp = CreateDefaultSubobject<USceneComponent>(TEXT("OutScene"));
+	OutSceneComp->SetupAttachment(RootComponent);
 }
 
 void ASell::BeginPlay()
@@ -42,4 +49,17 @@ bool ASell::IsActive()
 bool ASell::IsWorking()
 {
 	return bWorking;
+}
+
+void ASell::ActionStart()
+{
+	RobotArm->ParentSell = this;
+	RobotArm->ActionReady();
+}
+
+void ASell::ActionExit()
+{
+	TargetDelivery->SetMove(true);
+	TargetDelivery = nullptr;
+	SetWorking(false);
 }
