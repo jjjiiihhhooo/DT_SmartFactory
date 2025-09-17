@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Factory/Manager.h"
+#include "Factory/Managers/Manager.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -31,7 +31,7 @@ struct Z_Construct_UFunction_AManager_Run_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_DeltaTime;
@@ -73,7 +73,7 @@ struct Z_Construct_UFunction_AManager_SetReady_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 #endif // WITH_METADATA
 	static void NewProp_Ready_SetBit(void* Obj);
@@ -154,52 +154,52 @@ struct Z_Construct_UClass_AManager_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-		{ "IncludePath", "Manager.h" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "IncludePath", "Managers/Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OrderCount_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentCount_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CompleteCount_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PartsPosArray_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SellArray_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Spawner_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IdlePos_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EndPos_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EndOutPos_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnPos_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TestSpeed_MetaData[] = {
 		{ "Category", "Manager" },
-		{ "ModuleRelativePath", "Manager.h" },
+		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_OrderCount;
@@ -218,8 +218,8 @@ struct Z_Construct_UClass_AManager_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AManager_Run, "Run" }, // 2488119232
-		{ &Z_Construct_UFunction_AManager_SetReady, "SetReady" }, // 2576634675
+		{ &Z_Construct_UFunction_AManager_Run, "Run" }, // 3774912784
+		{ &Z_Construct_UFunction_AManager_SetReady, "SetReady" }, // 2950801141
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -289,14 +289,14 @@ AManager::~AManager() {}
 // ********** End Class AManager *******************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_Statics
+struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AManager, AManager::StaticClass, TEXT("AManager"), &Z_Registration_Info_UClass_AManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AManager), 3517397014U) },
+		{ Z_Construct_UClass_AManager, AManager::StaticClass, TEXT("AManager"), &Z_Registration_Info_UClass_AManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AManager), 3952583122U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_4177090750(TEXT("/Script/Factory"),
-	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Manager_h__Script_Factory_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_3009951023(TEXT("/Script/Factory"),
+	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // ********** End Registration *********************************************************************

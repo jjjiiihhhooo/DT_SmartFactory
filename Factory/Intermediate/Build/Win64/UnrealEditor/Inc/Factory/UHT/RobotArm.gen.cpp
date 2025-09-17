@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Factory/RobotArm.h"
+#include "Factory/Actors/RobotArm.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -58,25 +58,25 @@ struct Z_Construct_UClass_ARobotArm_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-		{ "IncludePath", "RobotArm.h" },
-		{ "ModuleRelativePath", "RobotArm.h" },
+		{ "IncludePath", "Actors/RobotArm.h" },
+		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Point_MetaData[] = {
 		{ "Category", "Action" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "RobotArm.h" },
+		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetPos_MetaData[] = {
 		{ "Category", "Action" },
-		{ "ModuleRelativePath", "RobotArm.h" },
+		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MoveSpeed_MetaData[] = {
 		{ "Category", "Action" },
-		{ "ModuleRelativePath", "RobotArm.h" },
+		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ParentSell_MetaData[] = {
 		{ "Category", "RobotArm" },
-		{ "ModuleRelativePath", "RobotArm.h" },
+		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Point;
@@ -137,14 +137,14 @@ ARobotArm::~ARobotArm() {}
 // ********** End Class ARobotArm ******************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h__Script_Factory_Statics
+struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ARobotArm, ARobotArm::StaticClass, TEXT("ARobotArm"), &Z_Registration_Info_UClass_ARobotArm, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARobotArm), 3001924922U) },
+		{ Z_Construct_UClass_ARobotArm, ARobotArm::StaticClass, TEXT("ARobotArm"), &Z_Registration_Info_UClass_ARobotArm, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARobotArm), 1837140278U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h__Script_Factory_1907960846(TEXT("/Script/Factory"),
-	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h__Script_Factory_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_2202391002(TEXT("/Script/Factory"),
+	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // ********** End Registration *********************************************************************

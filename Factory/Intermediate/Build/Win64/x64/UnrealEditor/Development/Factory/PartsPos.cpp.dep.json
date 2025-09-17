@@ -1,14 +1,14 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\partspos.cpp",
+        "Source": "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\actors\\partspos.cpp",
         "ProvidedModule": "",
         "PCH": "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\factoryeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
             "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\factory\\definitions.factory.h",
-            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\partspos.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\actors\\partspos.h",
             "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\unrealeditor\\inc\\factory\\uht\\partspos.generated.h",
-            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\spawner.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\managers\\spawner.h",
             "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
             "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
             "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\net\\core\\public\\net\\core\\nettoken\\nettokenexportcontext.h",

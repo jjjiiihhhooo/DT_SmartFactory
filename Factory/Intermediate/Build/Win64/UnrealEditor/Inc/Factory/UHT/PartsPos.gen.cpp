@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Factory/PartsPos.h"
+#include "Factory/Actors/PartsPos.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -57,28 +57,28 @@ struct Z_Construct_UClass_APartsPos_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-		{ "IncludePath", "PartsPos.h" },
-		{ "ModuleRelativePath", "PartsPos.h" },
+		{ "IncludePath", "Actors/PartsPos.h" },
+		{ "ModuleRelativePath", "Actors/PartsPos.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpawnPos_MetaData[] = {
 		{ "Category", "PartsPos" },
-		{ "ModuleRelativePath", "PartsPos.h" },
+		{ "ModuleRelativePath", "Actors/PartsPos.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IdlePos_MetaData[] = {
 		{ "Category", "PartsPos" },
-		{ "ModuleRelativePath", "PartsPos.h" },
+		{ "ModuleRelativePath", "Actors/PartsPos.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Parts_MetaData[] = {
 		{ "Category", "PartsPos" },
-		{ "ModuleRelativePath", "PartsPos.h" },
+		{ "ModuleRelativePath", "Actors/PartsPos.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bSelect_MetaData[] = {
 		{ "Category", "PartsPos" },
-		{ "ModuleRelativePath", "PartsPos.h" },
+		{ "ModuleRelativePath", "Actors/PartsPos.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bReady_MetaData[] = {
 		{ "Category", "PartsPos" },
-		{ "ModuleRelativePath", "PartsPos.h" },
+		{ "ModuleRelativePath", "Actors/PartsPos.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_SpawnPos;
@@ -149,14 +149,14 @@ APartsPos::~APartsPos() {}
 // ********** End Class APartsPos ******************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h__Script_Factory_Statics
+struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APartsPos, APartsPos::StaticClass, TEXT("APartsPos"), &Z_Registration_Info_UClass_APartsPos, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APartsPos), 1616164491U) },
+		{ Z_Construct_UClass_APartsPos, APartsPos::StaticClass, TEXT("APartsPos"), &Z_Registration_Info_UClass_APartsPos, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APartsPos), 3839117137U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h__Script_Factory_2789845296(TEXT("/Script/Factory"),
-	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h__Script_Factory_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h__Script_Factory_1466874132(TEXT("/Script/Factory"),
+	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // ********** End Registration *********************************************************************

@@ -30,12 +30,6 @@
     <Filter Include="Source\Factory">
       <UniqueIdentifier>{CF6126D9-5AE1-3600-9593-09C9CFB40084}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\Factory\DeliveryController.cpp">
-      <Filter>Source\Factory</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Factory\DeliveryController.h">
-      <Filter>Source\Factory</Filter>
-    </ClInclude>
     <None Include="..\..\Source\Factory\Factory.Build.cs">
       <Filter>Source\Factory</Filter>
     </None>
@@ -45,35 +39,50 @@
     <ClInclude Include="..\..\Source\Factory\Factory.h">
       <Filter>Source\Factory</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Factory\Manager.cpp">
-      <Filter>Source\Factory</Filter>
+    <Filter Include="Source\Factory\Actors">
+      <UniqueIdentifier>{02F41408-941C-376C-8B2C-903953A4BB17}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Factory\Actors\PartsPos.cpp">
+      <Filter>Source\Factory\Actors</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Factory\Manager.h">
-      <Filter>Source\Factory</Filter>
+    <ClInclude Include="..\..\Source\Factory\Actors\PartsPos.h">
+      <Filter>Source\Factory\Actors</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Factory\PartsPos.cpp">
-      <Filter>Source\Factory</Filter>
+    <ClCompile Include="..\..\Source\Factory\Actors\RobotArm.cpp">
+      <Filter>Source\Factory\Actors</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Factory\PartsPos.h">
-      <Filter>Source\Factory</Filter>
+    <ClInclude Include="..\..\Source\Factory\Actors\RobotArm.h">
+      <Filter>Source\Factory\Actors</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Factory\RobotArm.cpp">
-      <Filter>Source\Factory</Filter>
+    <ClCompile Include="..\..\Source\Factory\Actors\Sell.cpp">
+      <Filter>Source\Factory\Actors</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Factory\RobotArm.h">
-      <Filter>Source\Factory</Filter>
+    <ClInclude Include="..\..\Source\Factory\Actors\Sell.h">
+      <Filter>Source\Factory\Actors</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Factory\Sell.cpp">
-      <Filter>Source\Factory</Filter>
+    <Filter Include="Source\Factory\AIController">
+      <UniqueIdentifier>{57BC720A-5768-34E0-A444-A7CD5CFDE5B8}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Factory\AIController\DeliveryController.cpp">
+      <Filter>Source\Factory\AIController</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Factory\Sell.h">
-      <Filter>Source\Factory</Filter>
+    <ClInclude Include="..\..\Source\Factory\AIController\DeliveryController.h">
+      <Filter>Source\Factory\AIController</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Factory\Spawner.cpp">
-      <Filter>Source\Factory</Filter>
+    <Filter Include="Source\Factory\Managers">
+      <UniqueIdentifier>{7211EC81-3B0C-3C05-B781-A4F7C956DB15}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Factory\Managers\Manager.cpp">
+      <Filter>Source\Factory\Managers</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Factory\Spawner.h">
-      <Filter>Source\Factory</Filter>
+    <ClInclude Include="..\..\Source\Factory\Managers\Manager.h">
+      <Filter>Source\Factory\Managers</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Factory\Managers\Spawner.cpp">
+      <Filter>Source\Factory\Managers</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\Managers\Spawner.h">
+      <Filter>Source\Factory\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

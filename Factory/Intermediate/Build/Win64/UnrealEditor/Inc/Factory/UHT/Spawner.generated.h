@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "Spawner.h"
+// IWYU pragma: private, include "Managers/Spawner.h"
 
 #ifdef FACTORY_Spawner_generated_h
 #error "Spawner.generated.h already included, missing '#pragma once' in Spawner.h"
@@ -20,7 +20,7 @@ class AActor;
 class ACharacter;
 
 // ********** Begin Class ASpawner *****************************************************************
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetCount); \
 	DECLARE_FUNCTION(execReturnParts); \
 	DECLARE_FUNCTION(execReturnDelivery); \
@@ -30,7 +30,7 @@ class ACharacter;
 
 FACTORY_API UClass* Z_Construct_UClass_ASpawner_NoRegister();
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASpawner(); \
 	friend struct Z_Construct_UClass_ASpawner_Statics; \
@@ -41,7 +41,7 @@ public: \
 	DECLARE_SERIALIZER(ASpawner)
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_12_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	ASpawner(ASpawner&&) = delete; \
 	ASpawner(const ASpawner&) = delete; \
@@ -51,13 +51,13 @@ public: \
 	NO_API virtual ~ASpawner();
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_9_PROLOG
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_GENERATED_BODY \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_9_PROLOG
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_INCLASS_NO_PURE_DECLS \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h_12_ENHANCED_CONSTRUCTORS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_12_INCLASS_NO_PURE_DECLS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -67,6 +67,6 @@ class ASpawner;
 // ********** End Class ASpawner *******************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Spawner_h
+#define CURRENT_FILE_ID FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

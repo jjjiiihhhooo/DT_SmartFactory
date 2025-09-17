@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Factory/DeliveryController.h"
+#include "Factory/AIController/DeliveryController.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
@@ -14,8 +14,11 @@ void EmptyLinkFunctionForGeneratedCodeDeliveryController() {}
 // ********** Begin Cross Module References ********************************************************
 AIMODULE_API UClass* Z_Construct_UClass_AAIController();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 FACTORY_API UClass* Z_Construct_UClass_ADeliveryController();
 FACTORY_API UClass* Z_Construct_UClass_ADeliveryController_NoRegister();
+FACTORY_API UClass* Z_Construct_UClass_APartsPos_NoRegister();
+FACTORY_API UClass* Z_Construct_UClass_ASell_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Factory();
 // ********** End Cross Module References **********************************************************
 
@@ -57,50 +60,28 @@ struct Z_Construct_UClass_ADeliveryController_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "HideCategories", "Collision Rendering Transformation" },
-		{ "IncludePath", "DeliveryController.h" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
+		{ "IncludePath", "AIController/DeliveryController.h" },
+		{ "ModuleRelativePath", "AIController/DeliveryController.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PartsPickPos_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetArray_MetaData[] = {
 		{ "Category", "Position" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
+		{ "ModuleRelativePath", "AIController/DeliveryController.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetPos_MetaData[] = {
-		{ "Category", "Position" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetPartsPos_MetaData[] = {
+		{ "ModuleRelativePath", "AIController/DeliveryController.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WorkPos_MetaData[] = {
-		{ "Category", "Position" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurAttachedParts_MetaData[] = {
+		{ "ModuleRelativePath", "AIController/DeliveryController.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WorkOutPos_MetaData[] = {
-		{ "Category", "Position" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EndPos_MetaData[] = {
-		{ "Category", "Position" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EndOutPos_MetaData[] = {
-		{ "Category", "Position" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnPos_MetaData[] = {
-		{ "Category", "Position" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurTargetPos_MetaData[] = {
-		{ "Category", "Position" },
-		{ "ModuleRelativePath", "DeliveryController.h" },
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetSell_MetaData[] = {
+		{ "ModuleRelativePath", "AIController/DeliveryController.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FStructPropertyParams NewProp_PartsPickPos;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_TargetPos;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_WorkPos;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_WorkOutPos;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_EndPos;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_EndOutPos;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnPos;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_CurTargetPos;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_TargetArray_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_TargetArray;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetPartsPos;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurAttachedParts;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetSell;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -108,23 +89,17 @@ struct Z_Construct_UClass_ADeliveryController_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_PartsPickPos = { "PartsPickPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, PartsPickPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PartsPickPos_MetaData), NewProp_PartsPickPos_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetPos = { "TargetPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, TargetPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetPos_MetaData), NewProp_TargetPos_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_WorkPos = { "WorkPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, WorkPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WorkPos_MetaData), NewProp_WorkPos_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_WorkOutPos = { "WorkOutPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, WorkOutPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WorkOutPos_MetaData), NewProp_WorkOutPos_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_EndPos = { "EndPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, EndPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EndPos_MetaData), NewProp_EndPos_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_EndOutPos = { "EndOutPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, EndOutPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EndOutPos_MetaData), NewProp_EndOutPos_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_ReturnPos = { "ReturnPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, ReturnPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReturnPos_MetaData), NewProp_ReturnPos_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_CurTargetPos = { "CurTargetPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, CurTargetPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurTargetPos_MetaData), NewProp_CurTargetPos_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetArray_Inner = { "TargetArray", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetArray = { "TargetArray", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, TargetArray), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetArray_MetaData), NewProp_TargetArray_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetPartsPos = { "TargetPartsPos", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, TargetPartsPos), Z_Construct_UClass_APartsPos_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetPartsPos_MetaData), NewProp_TargetPartsPos_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_CurAttachedParts = { "CurAttachedParts", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, CurAttachedParts), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurAttachedParts_MetaData), NewProp_CurAttachedParts_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetSell = { "TargetSell", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADeliveryController, TargetSell), Z_Construct_UClass_ASell_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TargetSell_MetaData), NewProp_TargetSell_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADeliveryController_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_PartsPickPos,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetPos,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_WorkPos,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_WorkOutPos,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_EndPos,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_EndOutPos,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_ReturnPos,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_CurTargetPos,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetArray_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetArray,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetPartsPos,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_CurAttachedParts,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADeliveryController_Statics::NewProp_TargetSell,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ADeliveryController_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ADeliveryController_Statics::DependentSingletons[])() = {
@@ -155,20 +130,19 @@ UClass* Z_Construct_UClass_ADeliveryController()
 	}
 	return Z_Registration_Info_UClass_ADeliveryController.OuterSingleton;
 }
-ADeliveryController::ADeliveryController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(ADeliveryController);
 ADeliveryController::~ADeliveryController() {}
 // ********** End Class ADeliveryController ********************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h__Script_Factory_Statics
+struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_AIController_DeliveryController_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADeliveryController, ADeliveryController::StaticClass, TEXT("ADeliveryController"), &Z_Registration_Info_UClass_ADeliveryController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADeliveryController), 1810019239U) },
+		{ Z_Construct_UClass_ADeliveryController, ADeliveryController::StaticClass, TEXT("ADeliveryController"), &Z_Registration_Info_UClass_ADeliveryController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADeliveryController), 399556440U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h__Script_Factory_3646085010(TEXT("/Script/Factory"),
-	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_DeliveryController_h__Script_Factory_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_AIController_DeliveryController_h__Script_Factory_924874844(TEXT("/Script/Factory"),
+	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_AIController_DeliveryController_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_AIController_DeliveryController_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // ********** End Registration *********************************************************************

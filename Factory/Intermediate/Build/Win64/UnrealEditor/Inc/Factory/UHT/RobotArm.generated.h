@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "RobotArm.h"
+// IWYU pragma: private, include "Actors/RobotArm.h"
 
 #ifdef FACTORY_RobotArm_generated_h
 #error "RobotArm.generated.h already included, missing '#pragma once' in RobotArm.h"
@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class ARobotArm ****************************************************************
 FACTORY_API UClass* Z_Construct_UClass_ARobotArm_NoRegister();
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesARobotArm(); \
 	friend struct Z_Construct_UClass_ARobotArm_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(ARobotArm)
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h_13_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	ARobotArm(ARobotArm&&) = delete; \
 	ARobotArm(const ARobotArm&) = delete; \
@@ -40,12 +40,12 @@ public: \
 	NO_API virtual ~ARobotArm();
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h_10_PROLOG
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h_13_GENERATED_BODY \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h_10_PROLOG
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h_13_INCLASS_NO_PURE_DECLS \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h_13_ENHANCED_CONSTRUCTORS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h_13_INCLASS_NO_PURE_DECLS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -55,6 +55,6 @@ class ARobotArm;
 // ********** End Class ARobotArm ******************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_RobotArm_h
+#define CURRENT_FILE_ID FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

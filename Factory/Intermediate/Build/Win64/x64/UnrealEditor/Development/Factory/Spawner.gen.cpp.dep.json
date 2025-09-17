@@ -6,7 +6,7 @@
         "PCH": "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\factoryeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
             "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\factory\\definitions.factory.h",
-            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\spawner.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\managers\\spawner.h",
             "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
             "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
             "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\net\\core\\public\\net\\core\\nettoken\\nettokenexportcontext.h",

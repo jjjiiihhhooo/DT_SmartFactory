@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "PartsPos.h"
+// IWYU pragma: private, include "Actors/PartsPos.h"
 
 #ifdef FACTORY_PartsPos_generated_h
 #error "PartsPos.generated.h already included, missing '#pragma once' in PartsPos.h"
@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class APartsPos ****************************************************************
 FACTORY_API UClass* Z_Construct_UClass_APartsPos_NoRegister();
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h_10_INCLASS_NO_PURE_DECLS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h_10_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPartsPos(); \
 	friend struct Z_Construct_UClass_APartsPos_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(APartsPos)
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h_10_ENHANCED_CONSTRUCTORS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h_10_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	APartsPos(APartsPos&&) = delete; \
 	APartsPos(const APartsPos&) = delete; \
@@ -40,12 +40,12 @@ public: \
 	NO_API virtual ~APartsPos();
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h_7_PROLOG
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h_10_GENERATED_BODY \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h_7_PROLOG
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h_10_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h_10_INCLASS_NO_PURE_DECLS \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h_10_ENHANCED_CONSTRUCTORS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h_10_INCLASS_NO_PURE_DECLS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -55,6 +55,6 @@ class APartsPos;
 // ********** End Class APartsPos ******************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_PartsPos_h
+#define CURRENT_FILE_ID FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_PartsPos_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
