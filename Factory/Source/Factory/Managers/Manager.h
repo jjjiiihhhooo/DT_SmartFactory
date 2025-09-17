@@ -8,6 +8,7 @@ class ASpawner;
 class ADeliveryController;
 class ASell;
 class APartsPos;
+class ATriggerBox;
 class UBoxComponent;
 
 UCLASS()
@@ -19,6 +20,10 @@ public:
 	AManager();
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ASpawner* Spawner;
 
 public:
 	UFUNCTION(BlueprintCallable)
@@ -46,8 +51,7 @@ public:
 	TArray<ASell*> SellArray;
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	ASpawner* Spawner;
+	FVector GetEndAreaClosestPoint(const FVector& InputPoint);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector IdlePos;
@@ -62,6 +66,9 @@ public:
 	FVector ReturnPos;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ATriggerBox* EndArea;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float TestSpeed;
 
 public:
@@ -74,4 +81,10 @@ private:
 	bool bReady;
 
 	ADeliveryController* ReadyController;
+
+private:
+	bool SpawnTime(float DeltaTime);
+
+	float MaxTime;
+	float CurTime;
 };

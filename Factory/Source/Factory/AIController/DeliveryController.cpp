@@ -1,7 +1,8 @@
 #include "DeliveryController.h"
-#include "../Managers/Spawner.h"
-#include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
+#include "GameFramework/Character.h"
+#include "../Managers/Spawner.h"
+#include "../Managers/Manager.h"
 #include "../Actors/Sell.h"
 #include "../Actors/PartsPos.h"
 
@@ -55,6 +56,13 @@ void ADeliveryController::MoveResult()
 {
 	switch (CurrentMoveState)
 	{
+		case ECurrentMoveState::MovingToIdlePos:
+		{
+			SetMoveState(ECurrentMoveState::MovingToPartsPos);
+			AIMoveToTarget();
+
+			break;
+		}
 		case ECurrentMoveState::MovingToPartsPos: 
 		{
 			TargetPartsPos->SetPartsLocation(GetCharacter()->GetActorLocation());
@@ -65,13 +73,13 @@ void ADeliveryController::MoveResult()
 			TargetPartsPos->Parts = nullptr;
 			TargetPartsPos->SetSelect(false);
 
-			CurrentMoveState = ECurrentMoveState::MovingToTargetPos;
+			SetMoveState(ECurrentMoveState::MovingToTargetPos);
 			AIMoveToTarget();
 			break;
 		}
 		case ECurrentMoveState::MovingToTargetPos:
 		{
-			CurrentMoveState = ECurrentMoveState::MovingToWorkPos;
+			SetMoveState(ECurrentMoveState::MovingToWorkPos);
 			
 			FVector TargetVector = GetCurrentTarget() - GetCharacter()->GetActorLocation();
 			TargetVector.Z = 0;
@@ -86,7 +94,7 @@ void ADeliveryController::MoveResult()
 		case ECurrentMoveState::MovingToWorkPos:
 		{
 			SetMove(false);
-			CurrentMoveState = ECurrentMoveState::MovingToWorkOutPos;
+			SetMoveState(ECurrentMoveState::MovingToWorkOutPos);
 
 			TargetSell->ActionStart();
 
@@ -95,20 +103,31 @@ void ADeliveryController::MoveResult()
 		case ECurrentMoveState::MovingToWorkOutPos:
 		{
 			SetMove(false);
-			CurrentMoveState = ECurrentMoveState::MovingToEndPos;
-				
+
+			SetMoveState(ECurrentMoveState::MovingToEndPos);
+
+			AActor* ManagerActor = UGameplayStatics::GetActorOfClass(GetWorld(), AManager::StaticClass());
+			AManager* Manager = Cast<AManager>(ManagerActor);
+
+			FVector Cur = GetCharacter()->GetActorLocation();
+			FVector Target = Manager->GetEndAreaClosestPoint(Cur);
+
+			SetTargetPos(CurrentMoveState, Target);
+
 			AIMoveToTarget();
 
 			break;
 		}
 		case ECurrentMoveState::MovingToEndPos:
 		{
-			CurrentMoveState = ECurrentMoveState::MovingToEndOutPos;
+			SetMoveState(ECurrentMoveState::MovingToEndOutPos);
 
 			CurAttachedParts->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+
 			AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
 			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
 			Spawner->ReturnParts(CurAttachedParts);
+
 			CurAttachedParts = nullptr;
 
 			AIMoveToTarget();
@@ -117,14 +136,15 @@ void ADeliveryController::MoveResult()
 		}
 		case ECurrentMoveState::MovingToEndOutPos:
 		{
-			CurrentMoveState = ECurrentMoveState::MovingToReturnPos;
+			SetMoveState(ECurrentMoveState::MovingToReturnPos);
+
 			AIMoveToTarget();
 
 			break;
 		}
 		case ECurrentMoveState::MovingToReturnPos:
 		{
-			CurrentMoveState = ECurrentMoveState::None;
+			SetMoveState(ECurrentMoveState::None);
 
 			AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
 			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
@@ -141,6 +161,11 @@ void ADeliveryController::OnMoveCallback(FAIRequestID RequestID, const FPathFoll
 	{
 		MoveResult();
 	}
+}
+
+void ADeliveryController::SetMoveState(ECurrentMoveState MoveState)
+{
+	CurrentMoveState = MoveState;
 }
 
 void ADeliveryController::SetTargetPos(ECurrentMoveState MoveState, FVector Pos)
@@ -162,8 +187,6 @@ void ADeliveryController::SetTargetPartsPos(APartsPos* PartsPos)
 {
 	TargetPartsPos = PartsPos;
 	SetTargetPos(ECurrentMoveState::MovingToPartsPos, PartsPos->IdlePos);
-
-	CurrentMoveState = ECurrentMoveState::MovingToPartsPos;
 }
 
 void ADeliveryController::SetTargetSell(ASell* Sell)

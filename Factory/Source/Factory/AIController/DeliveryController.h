@@ -3,10 +3,12 @@
 #include "CoreMinimal.h"
 #include "AIController.h"
 #include "Navigation/PathFollowingComponent.h"
+#include "Navigation/CrowdFollowingComponent.h"
 #include "DeliveryController.generated.h"
 
 class ASell;
 class APartsPos;
+
 
 
 UCLASS()
@@ -22,6 +24,7 @@ public:
 	enum class ECurrentMoveState : uint8
 	{
 		None,
+		MovingToIdlePos,
 		MovingToPartsPos,
 		MovingToTargetPos,
 		MovingToWorkPos,
@@ -37,6 +40,7 @@ public:
 	void InterpMoveToTarget(float DeltaTime);
 	void MoveResult();
 	void OnMoveCallback(FAIRequestID RequestID, const FPathFollowingResult& Result);
+	void SetMoveState(ECurrentMoveState MoveState);
 	void SetTargetPos(ECurrentMoveState MoveState, FVector Pos);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")

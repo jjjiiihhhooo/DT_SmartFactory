@@ -3,12 +3,14 @@
 #include "../AIController/DeliveryController.h"
 #include "../Actors/Sell.h"
 #include "../Actors/PartsPos.h"
+#include "Engine/TriggerBox.h"
 #include "Components/BoxComponent.h"
 
 AManager::AManager()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
+	MaxTime = 1.0f;
+	CurTime = 1.0f;
 }
 
 void AManager::BeginPlay()
@@ -33,6 +35,11 @@ void AManager::Run(float DeltaTime)
 		return;
 	}
 
+	if (!SpawnTime(DeltaTime))
+	{
+		return;
+	}
+
 	if (ReadyController == nullptr)
 	{
 		if (ACharacter* Delivery = Spawner->GetDelivery())
@@ -45,35 +52,27 @@ void AManager::Run(float DeltaTime)
 	}
 	else
 	{
-		FVector Pos = ReadyController->GetCharacter()->GetActorLocation();
-		
-		if (FVector::Distance(Pos, IdlePos) > 5.0f)
+		if (APartsPos* FoundPartsPos = SelectPartsPos())
 		{
-			Pos = FMath::VInterpConstantTo(Pos, IdlePos, DeltaTime, 1000);
-			ReadyController->GetCharacter()->SetActorLocation(Pos);
-		}
-		else
-		{
-			if (APartsPos* FoundPartsPos = SelectPartsPos())
+			if (ASell* FoundSell = SelectSell())
 			{
-				if (ASell* FoundSell = SelectSell())
-				{
-					FoundPartsPos->SetSelect(true);
-					FoundSell->SetWorking(true);
-					ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToEndPos, EndPos);
-					ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToEndOutPos, EndOutPos);
-					ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToReturnPos, ReturnPos);
-					ReadyController->SetTargetSell(FoundSell);
+				FoundPartsPos->SetSelect(true);
+				FoundSell->SetWorking(true);
 
-					ReadyController->SetTargetPartsPos(FoundPartsPos);
-					ReadyController->AIMoveToTarget();
+				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToIdlePos, IdlePos);
+				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToEndOutPos, EndOutPos);
+				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToReturnPos, ReturnPos);
+				ReadyController->SetTargetSell(FoundSell);
+				ReadyController->SetTargetPartsPos(FoundPartsPos);
 
-					ReadyController = nullptr;
-					OrderCount--;
-				}
+				ReadyController->SetMoveState(ADeliveryController::ECurrentMoveState::MovingToIdlePos);
+				ReadyController->AIMoveToTarget();
+
+				ReadyController = nullptr;
+
+				CurTime = MaxTime;
+				OrderCount--;
 			}
-
-			
 		}
 	}
 }
@@ -111,6 +110,19 @@ ASell* AManager::SelectSell()
 	return nullptr;
 }
 
+FVector AManager::GetEndAreaClosestPoint(const FVector& InputPoint)
+{
+	FVector ReturnPoint = FVector::ZeroVector;
+	
+	if (UBoxComponent* Box = EndArea->FindComponentByClass<UBoxComponent>())
+	{
+		Box->GetClosestPointOnCollision(InputPoint, ReturnPoint);
+	}
+
+	return ReturnPoint;
+}
+
+
 void AManager::SetReady(bool Ready)
 {
 	bReady = Ready;
@@ -119,4 +131,15 @@ void AManager::SetReady(bool Ready)
 bool AManager::IsReady()
 {
 	return bReady;
+}
+
+bool AManager::SpawnTime(float DeltaTime)
+{
+	if (CurTime > 0)
+	{
+		CurTime -= DeltaTime;
+		return false;
+	}
+
+	return true;
 }
