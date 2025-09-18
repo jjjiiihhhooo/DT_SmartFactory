@@ -262,10 +262,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\Factory\Factory.h"/>
-    <ClCompile Include="..\..\Source\Factory\Actors\PartsPos.cpp">
+    <ClCompile Include="..\..\Source\Factory\Actors\ItemPos.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Factory\Actors\PartsPos.h"/>
+    <ClInclude Include="..\..\Source\Factory\Actors\ItemPos.h"/>
     <ClCompile Include="..\..\Source\Factory\Actors\RobotArm.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

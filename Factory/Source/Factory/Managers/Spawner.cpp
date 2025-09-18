@@ -28,7 +28,7 @@ void ASpawner::InitPool()
 	for (int32 i = 0; i < Count; i++)
 	{
 		CreateDelivery();
-		CreateParts();
+		CreateItem();
 	}
 }
 
@@ -44,13 +44,13 @@ void ASpawner::CreateDelivery()
 	DeliveryEnqueue(Delivery);
 }
 
-void ASpawner::CreateParts()
+void ASpawner::CreateItem()
 {
-	AActor* Parts = GetWorld()->SpawnActor<AActor>(PartsClass, SpawnPoint, FRotator::ZeroRotator);
+	AActor* Item = GetWorld()->SpawnActor<AActor>(ItemClass, SpawnPoint, FRotator::ZeroRotator);
 
-	PartsAllPooled.Add(Parts);
+	ItemAllPooled.Add(Item);
 
-	PartsEnqueue(Parts);
+	ItemEnqueue(Item);
 }
 
 void ASpawner::DeliveryEnqueue(ACharacter* Delivery)
@@ -69,10 +69,10 @@ void ASpawner::DeliveryEnqueue(ACharacter* Delivery)
 	DeliveryQueue.Enqueue(Delivery);
 }
 
-void ASpawner::PartsEnqueue(AActor* Parts)
+void ASpawner::ItemEnqueue(AActor* Item)
 {
-	Parts->SetActorLocation(SpawnPoint);
-	PartsQueue.Enqueue(Parts);
+	Item->SetActorLocation(SpawnPoint);
+	ItemQueue.Enqueue(Item);
 }
 
 ACharacter* ASpawner::GetDelivery()
@@ -101,17 +101,17 @@ ACharacter* ASpawner::GetDelivery()
 	return Delivery;
 }
 
-AActor* ASpawner::GetParts()
+AActor* ASpawner::GetItem()
 {
-	if (PartsQueue.IsEmpty())
+	if (ItemQueue.IsEmpty())
 	{
-		CreateParts();
+		CreateItem();
 	}
 
-	AActor* Parts;
-	PartsQueue.Dequeue(Parts);
+	AActor* Item;
+	ItemQueue.Dequeue(Item);
 
-	return Parts;
+	return Item;
 }
 
 
@@ -120,9 +120,9 @@ void ASpawner::ReturnDelivery(ACharacter* Delivery)
 	DeliveryEnqueue(Delivery);
 }
 
-void ASpawner::ReturnParts(AActor* Parts)
+void ASpawner::ReturnItem(AActor* Item)
 {
-	PartsEnqueue(Parts);
+	ItemEnqueue(Item);
 }
 
 int32 ASpawner::GetCount()

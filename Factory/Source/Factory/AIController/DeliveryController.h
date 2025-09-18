@@ -7,7 +7,7 @@
 #include "DeliveryController.generated.h"
 
 class ASell;
-class APartsPos;
+class AItemPos;
 
 
 
@@ -25,7 +25,7 @@ public:
 	{
 		None,
 		MovingToIdlePos,
-		MovingToPartsPos,
+		MovingToItemPos,
 		MovingToTargetPos,
 		MovingToWorkPos,
 		MovingToWorkOutPos,
@@ -53,13 +53,13 @@ private:
 	ECurrentMoveState CurrentMoveState;
 
 public:
-	void SetTargetPartsPos(APartsPos* PartsPos);
+	void SetTargetItemPos(AItemPos* ItemPos);
 
 	UPROPERTY()
-	APartsPos* TargetPartsPos;
+	AItemPos* TargetItemPos;
 
 	UPROPERTY()
-	AActor* CurAttachedParts;
+	AActor* CurAttachedItem;
 
 public:
 	void SetTargetSell(ASell* Sell);

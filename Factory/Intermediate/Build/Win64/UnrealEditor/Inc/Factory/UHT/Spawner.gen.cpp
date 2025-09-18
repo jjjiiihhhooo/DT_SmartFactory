@@ -106,10 +106,10 @@ DEFINE_FUNCTION(ASpawner::execGetDelivery)
 }
 // ********** End Class ASpawner Function GetDelivery **********************************************
 
-// ********** Begin Class ASpawner Function GetParts ***********************************************
-struct Z_Construct_UFunction_ASpawner_GetParts_Statics
+// ********** Begin Class ASpawner Function GetItem ************************************************
+struct Z_Construct_UFunction_ASpawner_GetItem_Statics
 {
-	struct Spawner_eventGetParts_Parms
+	struct Spawner_eventGetItem_Parms
 	{
 		AActor* ReturnValue;
 	};
@@ -123,30 +123,30 @@ struct Z_Construct_UFunction_ASpawner_GetParts_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASpawner_GetParts_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Spawner_eventGetParts_Parms, ReturnValue), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASpawner_GetParts_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASpawner_GetParts_Statics::NewProp_ReturnValue,
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASpawner_GetItem_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Spawner_eventGetItem_Parms, ReturnValue), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASpawner_GetItem_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASpawner_GetItem_Statics::NewProp_ReturnValue,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_GetParts_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASpawner_GetParts_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ASpawner, nullptr, "GetParts", Z_Construct_UFunction_ASpawner_GetParts_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_GetParts_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASpawner_GetParts_Statics::Spawner_eventGetParts_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_GetParts_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASpawner_GetParts_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(Z_Construct_UFunction_ASpawner_GetParts_Statics::Spawner_eventGetParts_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_ASpawner_GetParts()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_GetItem_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASpawner_GetItem_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ASpawner, nullptr, "GetItem", Z_Construct_UFunction_ASpawner_GetItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_GetItem_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASpawner_GetItem_Statics::Spawner_eventGetItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_GetItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASpawner_GetItem_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_ASpawner_GetItem_Statics::Spawner_eventGetItem_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASpawner_GetItem()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASpawner_GetParts_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASpawner_GetItem_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(ASpawner::execGetParts)
+DEFINE_FUNCTION(ASpawner::execGetItem)
 {
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(AActor**)Z_Param__Result=P_THIS->GetParts();
+	*(AActor**)Z_Param__Result=P_THIS->GetItem();
 	P_NATIVE_END;
 }
-// ********** End Class ASpawner Function GetParts *************************************************
+// ********** End Class ASpawner Function GetItem **************************************************
 
 // ********** Begin Class ASpawner Function ReturnDelivery *****************************************
 struct Z_Construct_UFunction_ASpawner_ReturnDelivery_Statics
@@ -191,12 +191,12 @@ DEFINE_FUNCTION(ASpawner::execReturnDelivery)
 }
 // ********** End Class ASpawner Function ReturnDelivery *******************************************
 
-// ********** Begin Class ASpawner Function ReturnParts ********************************************
-struct Z_Construct_UFunction_ASpawner_ReturnParts_Statics
+// ********** Begin Class ASpawner Function ReturnItem *********************************************
+struct Z_Construct_UFunction_ASpawner_ReturnItem_Statics
 {
-	struct Spawner_eventReturnParts_Parms
+	struct Spawner_eventReturnItem_Parms
 	{
-		AActor* Parts;
+		AActor* Item;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -204,35 +204,35 @@ struct Z_Construct_UFunction_ASpawner_ReturnParts_Statics
 		{ "ModuleRelativePath", "Managers/Spawner.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_Parts;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Item;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASpawner_ReturnParts_Statics::NewProp_Parts = { "Parts", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Spawner_eventReturnParts_Parms, Parts), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASpawner_ReturnParts_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASpawner_ReturnParts_Statics::NewProp_Parts,
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASpawner_ReturnItem_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Spawner_eventReturnItem_Parms, Item), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASpawner_ReturnItem_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASpawner_ReturnItem_Statics::NewProp_Item,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_ReturnParts_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASpawner_ReturnParts_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ASpawner, nullptr, "ReturnParts", Z_Construct_UFunction_ASpawner_ReturnParts_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_ReturnParts_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASpawner_ReturnParts_Statics::Spawner_eventReturnParts_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_ReturnParts_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASpawner_ReturnParts_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(Z_Construct_UFunction_ASpawner_ReturnParts_Statics::Spawner_eventReturnParts_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_ASpawner_ReturnParts()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_ReturnItem_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASpawner_ReturnItem_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ASpawner, nullptr, "ReturnItem", Z_Construct_UFunction_ASpawner_ReturnItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_ReturnItem_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASpawner_ReturnItem_Statics::Spawner_eventReturnItem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASpawner_ReturnItem_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASpawner_ReturnItem_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_ASpawner_ReturnItem_Statics::Spawner_eventReturnItem_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASpawner_ReturnItem()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASpawner_ReturnParts_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASpawner_ReturnItem_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(ASpawner::execReturnParts)
+DEFINE_FUNCTION(ASpawner::execReturnItem)
 {
-	P_GET_OBJECT(AActor,Z_Param_Parts);
+	P_GET_OBJECT(AActor,Z_Param_Item);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->ReturnParts(Z_Param_Parts);
+	P_THIS->ReturnItem(Z_Param_Item);
 	P_NATIVE_END;
 }
-// ********** End Class ASpawner Function ReturnParts **********************************************
+// ********** End Class ASpawner Function ReturnItem ***********************************************
 
 // ********** Begin Class ASpawner *****************************************************************
 void ASpawner::StaticRegisterNativesASpawner()
@@ -241,9 +241,9 @@ void ASpawner::StaticRegisterNativesASpawner()
 	static const FNameNativePtrPair Funcs[] = {
 		{ "GetCount", &ASpawner::execGetCount },
 		{ "GetDelivery", &ASpawner::execGetDelivery },
-		{ "GetParts", &ASpawner::execGetParts },
+		{ "GetItem", &ASpawner::execGetItem },
 		{ "ReturnDelivery", &ASpawner::execReturnDelivery },
-		{ "ReturnParts", &ASpawner::execReturnParts },
+		{ "ReturnItem", &ASpawner::execReturnItem },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -286,7 +286,7 @@ struct Z_Construct_UClass_ASpawner_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DeliveryAllPooled_MetaData[] = {
 		{ "ModuleRelativePath", "Managers/Spawner.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PartsAllPooled_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemAllPooled_MetaData[] = {
 		{ "ModuleRelativePath", "Managers/Spawner.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpawnPoint_MetaData[] = {
@@ -297,26 +297,26 @@ struct Z_Construct_UClass_ASpawner_Statics
 		{ "Category", "Pool" },
 		{ "ModuleRelativePath", "Managers/Spawner.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PartsClass_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemClass_MetaData[] = {
 		{ "Category", "Pool" },
 		{ "ModuleRelativePath", "Managers/Spawner.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DeliveryAllPooled_ElementProp;
 	static const UECodeGen_Private::FSetPropertyParams NewProp_DeliveryAllPooled;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_PartsAllPooled_ElementProp;
-	static const UECodeGen_Private::FSetPropertyParams NewProp_PartsAllPooled;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemAllPooled_ElementProp;
+	static const UECodeGen_Private::FSetPropertyParams NewProp_ItemAllPooled;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_SpawnPoint;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DeliveryClass;
-	static const UECodeGen_Private::FClassPropertyParams NewProp_PartsClass;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ItemClass;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ASpawner_GetCount, "GetCount" }, // 1585157944
 		{ &Z_Construct_UFunction_ASpawner_GetDelivery, "GetDelivery" }, // 1821918016
-		{ &Z_Construct_UFunction_ASpawner_GetParts, "GetParts" }, // 3452045862
+		{ &Z_Construct_UFunction_ASpawner_GetItem, "GetItem" }, // 2954977344
 		{ &Z_Construct_UFunction_ASpawner_ReturnDelivery, "ReturnDelivery" }, // 2184107334
-		{ &Z_Construct_UFunction_ASpawner_ReturnParts, "ReturnParts" }, // 1653425495
+		{ &Z_Construct_UFunction_ASpawner_ReturnItem, "ReturnItem" }, // 4051933485
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -326,19 +326,19 @@ struct Z_Construct_UClass_ASpawner_Statics
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_DeliveryAllPooled_ElementProp = { "DeliveryAllPooled", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FSetPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_DeliveryAllPooled = { "DeliveryAllPooled", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Set, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, DeliveryAllPooled), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeliveryAllPooled_MetaData), NewProp_DeliveryAllPooled_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_PartsAllPooled_ElementProp = { "PartsAllPooled", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FSetPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_PartsAllPooled = { "PartsAllPooled", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Set, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, PartsAllPooled), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PartsAllPooled_MetaData), NewProp_PartsAllPooled_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_ItemAllPooled_ElementProp = { "ItemAllPooled", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FSetPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_ItemAllPooled = { "ItemAllPooled", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Set, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, ItemAllPooled), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemAllPooled_MetaData), NewProp_ItemAllPooled_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_SpawnPoint = { "SpawnPoint", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, SpawnPoint), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SpawnPoint_MetaData), NewProp_SpawnPoint_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_DeliveryClass = { "DeliveryClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, DeliveryClass), Z_Construct_UClass_UClass, Z_Construct_UClass_ACharacter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeliveryClass_MetaData), NewProp_DeliveryClass_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_PartsClass = { "PartsClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, PartsClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PartsClass_MetaData), NewProp_PartsClass_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_ItemClass = { "ItemClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, ItemClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemClass_MetaData), NewProp_ItemClass_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASpawner_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_DeliveryAllPooled_ElementProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_DeliveryAllPooled,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_PartsAllPooled_ElementProp,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_PartsAllPooled,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_ItemAllPooled_ElementProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_ItemAllPooled,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_SpawnPoint,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_DeliveryClass,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_PartsClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_ItemClass,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASpawner_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASpawner_Statics::DependentSingletons[])() = {
@@ -377,10 +377,10 @@ ASpawner::~ASpawner() {}
 struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASpawner, ASpawner::StaticClass, TEXT("ASpawner"), &Z_Registration_Info_UClass_ASpawner, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpawner), 3457840057U) },
+		{ Z_Construct_UClass_ASpawner, ASpawner::StaticClass, TEXT("ASpawner"), &Z_Registration_Info_UClass_ASpawner, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpawner), 2740497720U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h__Script_Factory_3963035714(TEXT("/Script/Factory"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h__Script_Factory_1357096428(TEXT("/Script/Factory"),
 	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -4,7 +4,7 @@
 #include "../Managers/Spawner.h"
 #include "../Managers/Manager.h"
 #include "../Actors/Sell.h"
-#include "../Actors/PartsPos.h"
+#include "../Actors/ItemPos.h"
 
 ADeliveryController::ADeliveryController()
 {
@@ -58,20 +58,20 @@ void ADeliveryController::MoveResult()
 	{
 		case ECurrentMoveState::MovingToIdlePos:
 		{
-			SetMoveState(ECurrentMoveState::MovingToPartsPos);
+			SetMoveState(ECurrentMoveState::MovingToItemPos);
 			AIMoveToTarget();
 
 			break;
 		}
-		case ECurrentMoveState::MovingToPartsPos: 
+		case ECurrentMoveState::MovingToItemPos: 
 		{
-			TargetPartsPos->SetPartsLocation(GetCharacter()->GetActorLocation());
-			TargetPartsPos->SetPartsRotation(GetCharacter()->GetActorRotation());
-			TargetPartsPos->SetPartsAttach(GetCharacter());
+			TargetItemPos->SetItemLocation(GetCharacter()->GetActorLocation());
+			TargetItemPos->SetItemRotation(GetCharacter()->GetActorRotation());
+			TargetItemPos->SetItemAttach(GetCharacter());
 
-			CurAttachedParts = TargetPartsPos->Parts;
-			TargetPartsPos->Parts = nullptr;
-			TargetPartsPos->SetSelect(false);
+			CurAttachedItem = TargetItemPos->Item;
+			TargetItemPos->Item = nullptr;
+			TargetItemPos->SetSelect(false);
 
 			SetMoveState(ECurrentMoveState::MovingToTargetPos);
 			AIMoveToTarget();
@@ -95,6 +95,7 @@ void ADeliveryController::MoveResult()
 		{
 			SetMove(false);
 			SetMoveState(ECurrentMoveState::MovingToWorkOutPos);
+
 
 			TargetSell->ActionStart();
 
@@ -122,13 +123,13 @@ void ADeliveryController::MoveResult()
 		{
 			SetMoveState(ECurrentMoveState::MovingToEndOutPos);
 
-			CurAttachedParts->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+			CurAttachedItem->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
 			AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
 			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
-			Spawner->ReturnParts(CurAttachedParts);
+			Spawner->ReturnItem(CurAttachedItem);
 
-			CurAttachedParts = nullptr;
+			CurAttachedItem = nullptr;
 
 			AIMoveToTarget();
 
@@ -183,10 +184,10 @@ int32 ADeliveryController::GetCurrentTargetIndex()
 	return (int32)CurrentMoveState;
 }
 
-void ADeliveryController::SetTargetPartsPos(APartsPos* PartsPos)
+void ADeliveryController::SetTargetItemPos(AItemPos* ItemPos)
 {
-	TargetPartsPos = PartsPos;
-	SetTargetPos(ECurrentMoveState::MovingToPartsPos, PartsPos->IdlePos);
+	TargetItemPos = ItemPos;
+	SetTargetPos(ECurrentMoveState::MovingToItemPos, ItemPos->IdlePos);
 }
 
 void ADeliveryController::SetTargetSell(ASell* Sell)

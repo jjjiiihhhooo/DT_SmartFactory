@@ -2,7 +2,7 @@
 #include "Spawner.h"
 #include "../AIController/DeliveryController.h"
 #include "../Actors/Sell.h"
-#include "../Actors/PartsPos.h"
+#include "../Actors/ItemPos.h"
 #include "Engine/TriggerBox.h"
 #include "Components/BoxComponent.h"
 
@@ -52,18 +52,18 @@ void AManager::Run(float DeltaTime)
 	}
 	else
 	{
-		if (APartsPos* FoundPartsPos = SelectPartsPos())
+		if (AItemPos* FoundItemPos = SelectItemPos())
 		{
 			if (ASell* FoundSell = SelectSell())
 			{
-				FoundPartsPos->SetSelect(true);
+				FoundItemPos->SetSelect(true);
 				FoundSell->SetWorking(true);
 
 				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToIdlePos, IdlePos);
 				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToEndOutPos, EndOutPos);
 				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToReturnPos, ReturnPos);
 				ReadyController->SetTargetSell(FoundSell);
-				ReadyController->SetTargetPartsPos(FoundPartsPos);
+				ReadyController->SetTargetItemPos(FoundItemPos);
 
 				ReadyController->SetMoveState(ADeliveryController::ECurrentMoveState::MovingToIdlePos);
 				ReadyController->AIMoveToTarget();
@@ -77,15 +77,15 @@ void AManager::Run(float DeltaTime)
 	}
 }
 
-APartsPos* AManager::SelectPartsPos()
+AItemPos* AManager::SelectItemPos()
 {
-	for (APartsPos* CurParts : PartsPosArray)
+	for (AItemPos* CurItem : ItemPosArray)
 	{
-		if (CurParts->Parts)
+		if (CurItem->Item)
 		{
-			if (!CurParts->IsSelect() && CurParts->IsReady())
+			if (!CurItem->IsSelect() && CurItem->IsReady())
 			{
-				return CurParts;
+				return CurItem;
 			}
 		}
 	}

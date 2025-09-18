@@ -15,9 +15,9 @@ void EmptyLinkFunctionForGeneratedCodeManager() {}
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_ATriggerBox_NoRegister();
+FACTORY_API UClass* Z_Construct_UClass_AItemPos_NoRegister();
 FACTORY_API UClass* Z_Construct_UClass_AManager();
 FACTORY_API UClass* Z_Construct_UClass_AManager_NoRegister();
-FACTORY_API UClass* Z_Construct_UClass_APartsPos_NoRegister();
 FACTORY_API UClass* Z_Construct_UClass_ASell_NoRegister();
 FACTORY_API UClass* Z_Construct_UClass_ASpawner_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Factory();
@@ -163,18 +163,18 @@ struct Z_Construct_UClass_AManager_Statics
 		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OrderCount_MetaData[] = {
-		{ "Category", "Manager" },
+		{ "Category", "Order" },
 		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentCount_MetaData[] = {
-		{ "Category", "Manager" },
+		{ "Category", "Order" },
 		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CompleteCount_MetaData[] = {
-		{ "Category", "Manager" },
+		{ "Category", "Order" },
 		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PartsPosArray_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemPosArray_MetaData[] = {
 		{ "Category", "Manager" },
 		{ "ModuleRelativePath", "Managers/Manager.h" },
 	};
@@ -211,8 +211,8 @@ struct Z_Construct_UClass_AManager_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp_OrderCount;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentCount;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CompleteCount;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_PartsPosArray_Inner;
-	static const UECodeGen_Private::FArrayPropertyParams NewProp_PartsPosArray;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemPosArray_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_ItemPosArray;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SellArray_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_SellArray;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_IdlePos;
@@ -237,8 +237,8 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AManager_Stati
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_OrderCount = { "OrderCount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, OrderCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OrderCount_MetaData), NewProp_OrderCount_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_CurrentCount = { "CurrentCount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, CurrentCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentCount_MetaData), NewProp_CurrentCount_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_CompleteCount = { "CompleteCount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, CompleteCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CompleteCount_MetaData), NewProp_CompleteCount_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_PartsPosArray_Inner = { "PartsPosArray", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_APartsPos_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_PartsPosArray = { "PartsPosArray", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, PartsPosArray), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PartsPosArray_MetaData), NewProp_PartsPosArray_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_ItemPosArray_Inner = { "ItemPosArray", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AItemPos_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_ItemPosArray = { "ItemPosArray", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, ItemPosArray), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemPosArray_MetaData), NewProp_ItemPosArray_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_SellArray_Inner = { "SellArray", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ASell_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_SellArray = { "SellArray", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, SellArray), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SellArray_MetaData), NewProp_SellArray_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AManager_Statics::NewProp_IdlePos = { "IdlePos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AManager, IdlePos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IdlePos_MetaData), NewProp_IdlePos_MetaData) };
@@ -252,8 +252,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AManager_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_OrderCount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_CurrentCount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_CompleteCount,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_PartsPosArray_Inner,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_PartsPosArray,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_ItemPosArray_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_ItemPosArray,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_SellArray_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_SellArray,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AManager_Statics::NewProp_IdlePos,
@@ -300,10 +300,10 @@ AManager::~AManager() {}
 struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AManager, AManager::StaticClass, TEXT("AManager"), &Z_Registration_Info_UClass_AManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AManager), 2002904742U) },
+		{ Z_Construct_UClass_AManager, AManager::StaticClass, TEXT("AManager"), &Z_Registration_Info_UClass_AManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AManager), 599360017U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_472776544(TEXT("/Script/Factory"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_188275198(TEXT("/Script/Factory"),
 	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

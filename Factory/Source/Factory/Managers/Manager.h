@@ -7,7 +7,7 @@
 class ASpawner;
 class ADeliveryController;
 class ASell;
-class APartsPos;
+class AItemPos;
 class ATriggerBox;
 class UBoxComponent;
 
@@ -40,10 +40,10 @@ public:
 
 
 public:
-	APartsPos* SelectPartsPos();
+	AItemPos* SelectItemPos();
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<APartsPos*> PartsPosArray;
+	TArray<AItemPos*> ItemPosArray;
 
 public:
 	ASell* SelectSell();

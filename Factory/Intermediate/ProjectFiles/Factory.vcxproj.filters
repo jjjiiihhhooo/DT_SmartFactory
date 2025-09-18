@@ -42,10 +42,10 @@
     <Filter Include="Source\Factory\Actors">
       <UniqueIdentifier>{02F41408-941C-376C-8B2C-903953A4BB17}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\Factory\Actors\PartsPos.cpp">
+    <ClCompile Include="..\..\Source\Factory\Actors\ItemPos.cpp">
       <Filter>Source\Factory\Actors</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Factory\Actors\PartsPos.h">
+    <ClInclude Include="..\..\Source\Factory\Actors\ItemPos.h">
       <Filter>Source\Factory\Actors</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Factory\Actors\RobotArm.cpp">
