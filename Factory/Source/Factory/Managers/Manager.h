@@ -29,14 +29,15 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Run(float DeltaTime);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Order")
 	int32 OrderCount;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Order")
 	int32 CurrentCount;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Order")
 	int32 CompleteCount;
+
 
 public:
 	APartsPos* SelectPartsPos();
