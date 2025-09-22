@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class AItemPos *****************************************************************
 FACTORY_API UClass* Z_Construct_UClass_AItemPos_NoRegister();
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_10_INCLASS_NO_PURE_DECLS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAItemPos(); \
 	friend struct Z_Construct_UClass_AItemPos_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(AItemPos)
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_10_ENHANCED_CONSTRUCTORS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_12_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AItemPos(AItemPos&&) = delete; \
 	AItemPos(const AItemPos&) = delete; \
@@ -40,12 +40,12 @@ public: \
 	NO_API virtual ~AItemPos();
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_7_PROLOG
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_10_GENERATED_BODY \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_9_PROLOG
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_10_INCLASS_NO_PURE_DECLS \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_10_ENHANCED_CONSTRUCTORS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_12_INCLASS_NO_PURE_DECLS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -1,6 +1,7 @@
 #include "ItemPos.h"
 #include "../Managers/Spawner.h"
 #include "Kismet/GameplayStatics.h"
+#include "Item.h"
 
 AItemPos::AItemPos()
 {
@@ -25,8 +26,8 @@ void AItemPos::Tick(float DeltaTime)
 			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
 			
 			SetItem(Spawner->GetItem());
-			SetItemLocation(SpawnPos);
-			SetItemRotation(FRotator::ZeroRotator);
+			Item->SetItemLocation(SpawnPos);
+			Item->SetItemRotation(FRotator::ZeroRotator);
 			bReady = false;
 		}
 		else
@@ -45,25 +46,12 @@ void AItemPos::Tick(float DeltaTime)
 	}
 }
 
-void AItemPos::SetItem(AActor* NewItem)
+void AItemPos::SetItem(AItem* NewItem)
 {
 	Item = NewItem;
 }
 
-void AItemPos::SetItemLocation(FVector Pos)
-{
-	Item->SetActorLocation(Pos);
-}
 
-void AItemPos::SetItemRotation(FRotator Rot)
-{
-	Item->SetActorRotation(Rot);
-}
-
-void AItemPos::SetItemAttach(AActor* Parent)
-{
-	Item->AttachToActor(Parent, FAttachmentTransformRules::KeepWorldTransform);
-}
 
 void AItemPos::SetSelect(bool Select)
 {

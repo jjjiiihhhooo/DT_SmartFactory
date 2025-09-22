@@ -22,6 +22,7 @@ public:
 	void ActionExit();
 	void ActionReady();
 
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Action")
 	USceneComponent* Point;
 
@@ -29,14 +30,27 @@ public:
 	TArray<FVector> TargetPos;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Action")
+	TArray<FVector> WheelSettingPos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Action")
+	FVector IdlePos;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Action")
 	float MoveSpeed;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool Left;
+
 	bool bAction;
 	
+	bool bHasWheel;
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ASell* ParentSell;
 
+	UPROPERTY()
+	AActor* TempWheel;
 private:
-	int32 Index;
+	int32 TargetIndex;
+	int32 SettingIndex;
 };

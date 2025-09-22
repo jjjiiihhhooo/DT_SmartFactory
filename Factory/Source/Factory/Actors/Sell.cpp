@@ -28,12 +28,16 @@ void ASell::BeginPlay()
 void ASell::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void ASell::SetActive(bool Active)
 {
 	bActive = Active;
+}
+
+void ASell::SetSelect(bool Select)
+{
+	bSelect = Select;
 }
 
 void ASell::SetWorking(bool Working)
@@ -46,20 +50,56 @@ bool ASell::IsActive()
 	return bActive;
 }
 
+bool ASell::IsSelect()
+{
+	return bSelect;
+}
+
 bool ASell::IsWorking()
 {
-	return bWorking;
+	if(bLeftWorkOut && bRightWorkOut)
+	{
+		return true;
+	}
+
+	return false;
 }
 
 void ASell::ActionStart()
 {
-	RobotArm->ParentSell = this;
-	RobotArm->ActionReady();
+	LeftRobotArm->ParentSell = this;
+	LeftRobotArm->ActionReady();
+
+	RightRobotArm->ParentSell = this;
+	RightRobotArm->ActionReady();
 }
 
 void ASell::ActionExit()
 {
+	if (!IsWorking())
+	{
+		return;
+	}
+
 	TargetDelivery->SetMove(true);
 	TargetDelivery = nullptr;
-	SetWorking(false);
+
+	SetSelect(false);
+	bLeftWorkOut = false;
+	bRightWorkOut = false;
+}
+
+void ASell::SetLeftWorkOut(bool WorkOut)
+{
+	bLeftWorkOut = WorkOut;
+}
+
+void ASell::SetRightWorkOut(bool WorkOut)
+{
+	bRightWorkOut = WorkOut;
+}
+
+ADeliveryController* ASell::GetTargetDelivery()
+{
+	return TargetDelivery;
 }

@@ -2,6 +2,7 @@
 #include "../AIController/DeliveryController.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Engine/StaticMesh.h"
+#include "../Actors/Item.h"
 
 ASpawner::ASpawner()
 {
@@ -39,18 +40,27 @@ void ASpawner::CreateDelivery()
 	ADeliveryController* Controller = GetWorld()->SpawnActor<ADeliveryController>(ADeliveryController::StaticClass());
 	Controller->Possess(Delivery);
 
-	DeliveryAllPooled.Add(Delivery);
+	AllPoolArray.Add(Controller);
 
 	DeliveryEnqueue(Delivery);
 }
 
 void ASpawner::CreateItem()
 {
-	AActor* Item = GetWorld()->SpawnActor<AActor>(ItemClass, SpawnPoint, FRotator::ZeroRotator);
+	AItem* Item = GetWorld()->SpawnActor<AItem>(ItemClass, SpawnPoint, FRotator::ZeroRotator);
 
-	ItemAllPooled.Add(Item);
+	AllPoolArray.Add(Item);
 
 	ItemEnqueue(Item);
+}
+
+void ASpawner::CreateWheel()
+{
+	AActor* Wheel = GetWorld()->SpawnActor<AActor>(WheelClass, SpawnPoint, FRotator::ZeroRotator);
+
+	AllPoolArray.Add(Wheel);
+
+	WheelEnqueue(Wheel);
 }
 
 void ASpawner::DeliveryEnqueue(ACharacter* Delivery)
@@ -69,10 +79,16 @@ void ASpawner::DeliveryEnqueue(ACharacter* Delivery)
 	DeliveryQueue.Enqueue(Delivery);
 }
 
-void ASpawner::ItemEnqueue(AActor* Item)
+void ASpawner::ItemEnqueue(AItem* Item)
 {
 	Item->SetActorLocation(SpawnPoint);
 	ItemQueue.Enqueue(Item);
+}
+
+void ASpawner::WheelEnqueue(AActor* Wheel)
+{
+	Wheel->SetActorLocation(SpawnPoint);
+	WheelQueue.Enqueue(Wheel);
 }
 
 ACharacter* ASpawner::GetDelivery()
@@ -101,28 +117,45 @@ ACharacter* ASpawner::GetDelivery()
 	return Delivery;
 }
 
-AActor* ASpawner::GetItem()
+AItem* ASpawner::GetItem()
 {
 	if (ItemQueue.IsEmpty())
 	{
 		CreateItem();
 	}
 
-	AActor* Item;
+	AItem* Item;
 	ItemQueue.Dequeue(Item);
 
 	return Item;
 }
 
+AActor* ASpawner::GetWheel()
+{
+	if (WheelQueue.IsEmpty())
+	{
+		CreateWheel();
+	}
+
+	AActor* Wheel;
+	WheelQueue.Dequeue(Wheel);
+
+	return Wheel;
+}
 
 void ASpawner::ReturnDelivery(ACharacter* Delivery)
 {
 	DeliveryEnqueue(Delivery);
 }
 
-void ASpawner::ReturnItem(AActor* Item)
+void ASpawner::ReturnItem(AItem* Item)
 {
 	ItemEnqueue(Item);
+}
+
+void ASpawner::ReturnWheel(AActor* Wheel)
+{
+	WheelEnqueue(Wheel);
 }
 
 int32 ASpawner::GetCount()

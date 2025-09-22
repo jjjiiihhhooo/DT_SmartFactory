@@ -4,7 +4,9 @@
 #include "../Managers/Spawner.h"
 #include "../Managers/Manager.h"
 #include "../Actors/Sell.h"
+#include "../Actors/Item.h"
 #include "../Actors/ItemPos.h"
+
 
 ADeliveryController::ADeliveryController()
 {
@@ -65,11 +67,21 @@ void ADeliveryController::MoveResult()
 		}
 		case ECurrentMoveState::MovingToItemPos: 
 		{
-			TargetItemPos->SetItemLocation(GetCharacter()->GetActorLocation());
-			TargetItemPos->SetItemRotation(GetCharacter()->GetActorRotation());
-			TargetItemPos->SetItemAttach(GetCharacter());
+			TargetItemPos->Item->SetItemLocation(GetCharacter()->GetActorLocation());
+			TargetItemPos->Item->SetItemRotation(GetCharacter()->GetActorRotation());
+			TargetItemPos->Item->SetItemAttach(GetCharacter());
 
 			CurAttachedItem = TargetItemPos->Item;
+
+			if (CurAttachedItem == nullptr)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("CurAttachedItem Null"));
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("CurAttachedItem Set"));
+			}
+
 			TargetItemPos->Item = nullptr;
 			TargetItemPos->SetSelect(false);
 
@@ -127,7 +139,9 @@ void ADeliveryController::MoveResult()
 
 			AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
 			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
-			Spawner->ReturnItem(CurAttachedItem);
+
+			AItem* Item = Cast<AItem>(CurAttachedItem);
+			Spawner->ReturnItem(Item);
 
 			CurAttachedItem = nullptr;
 
@@ -190,11 +204,23 @@ void ADeliveryController::SetTargetItemPos(AItemPos* ItemPos)
 	SetTargetPos(ECurrentMoveState::MovingToItemPos, ItemPos->IdlePos);
 }
 
+AItem* ADeliveryController::GetCurItem()
+{
+	return CurAttachedItem;
+}
+
 void ADeliveryController::SetTargetSell(ASell* Sell)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Name %s"), *Sell->GetName());
+	
 	TargetSell = Sell;
 	Sell->TargetDelivery = this;
 	
+	if (Sell->TargetDelivery == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Sell Target Null"));
+	}
+
 	SetTargetPos(ECurrentMoveState::MovingToTargetPos, Sell->TargetSceneComp->GetComponentLocation());
 	SetTargetPos(ECurrentMoveState::MovingToWorkPos, Sell->WorkSceneComp->GetComponentLocation());
 	SetTargetPos(ECurrentMoveState::MovingToWorkOutPos, Sell->OutSceneComp->GetComponentLocation());

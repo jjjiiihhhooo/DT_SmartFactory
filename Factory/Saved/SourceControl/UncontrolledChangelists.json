@@ -6,7 +6,16 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/BP_ItemPos.uasset",
-				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Map/Factory.umap"
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Map/Factory.umap",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/BP_Sell.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Items/BP_Item.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/BP_Item.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Items/BP_Wheel.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Robot/BP_Delivery.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Robot/BP_RightRobotArm.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Robot/BP_LeftRobotArm.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Meshes/RobotLarge/CR_RobotArm.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Robot/BP_RobotArm.uasset"
 			]
 		}
 	]

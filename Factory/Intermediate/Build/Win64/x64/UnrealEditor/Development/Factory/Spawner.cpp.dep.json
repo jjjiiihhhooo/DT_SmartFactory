@@ -63,7 +63,9 @@
             "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\networkpredictioninterface.generated.h",
             "d:\\epicgames\\ue_5.6\\engine\\source\\runtime\\engine\\public\\charactermovementcomponentasync.h",
             "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponentasync.generated.h",
-            "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponent.generated.h"
+            "d:\\epicgames\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponent.generated.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\source\\factory\\actors\\item.h",
+            "d:\\jiho\\ue5\\dt_smartfactory\\factory\\intermediate\\build\\win64\\unrealeditor\\inc\\factory\\uht\\item.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -56,6 +56,7 @@ void AManager::Run(float DeltaTime)
 		{
 			if (ASell* FoundSell = SelectSell())
 			{
+				UE_LOG(LogTemp, Warning, TEXT("FoundSell %s"), *FoundSell->GetName());
 				FoundItemPos->SetSelect(true);
 				FoundSell->SetWorking(true);
 
@@ -100,8 +101,10 @@ ASell* AManager::SelectSell()
 	{
 		if (CurSell->IsActive())
 		{
-			if (!CurSell->IsWorking())
+			if (!CurSell->IsSelect())
 			{
+				CurSell->SetSelect(true);
+				UE_LOG(LogTemp, Warning, TEXT("SelectSell %s"), *CurSell->GetName());
 				return CurSell;
 			}
 		}

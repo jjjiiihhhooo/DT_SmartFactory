@@ -14,7 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeItemPos() {}
 // ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
-ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+FACTORY_API UClass* Z_Construct_UClass_AItem_NoRegister();
 FACTORY_API UClass* Z_Construct_UClass_AItemPos();
 FACTORY_API UClass* Z_Construct_UClass_AItemPos_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Factory();
@@ -97,7 +97,7 @@ struct Z_Construct_UClass_AItemPos_Statics
 };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AItemPos_Statics::NewProp_SpawnPos = { "SpawnPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItemPos, SpawnPos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SpawnPos_MetaData), NewProp_SpawnPos_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AItemPos_Statics::NewProp_IdlePos = { "IdlePos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItemPos, IdlePos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IdlePos_MetaData), NewProp_IdlePos_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItemPos_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItemPos, Item), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Item_MetaData), NewProp_Item_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItemPos_Statics::NewProp_Item = { "Item", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItemPos, Item), Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Item_MetaData), NewProp_Item_MetaData) };
 void Z_Construct_UClass_AItemPos_Statics::NewProp_bSelect_SetBit(void* Obj)
 {
 	((AItemPos*)Obj)->bSelect = 1;
@@ -152,10 +152,10 @@ AItemPos::~AItemPos() {}
 struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AItemPos, AItemPos::StaticClass, TEXT("AItemPos"), &Z_Registration_Info_UClass_AItemPos, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItemPos), 3233328564U) },
+		{ Z_Construct_UClass_AItemPos, AItemPos::StaticClass, TEXT("AItemPos"), &Z_Registration_Info_UClass_AItemPos, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItemPos), 229686591U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h__Script_Factory_3823382504(TEXT("/Script/Factory"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h__Script_Factory_3415508872(TEXT("/Script/Factory"),
 	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_ItemPos_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

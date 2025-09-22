@@ -20,9 +20,11 @@ public:
 
 public:
 	void SetActive(bool Active);
+	void SetSelect(bool Select);	
 	void SetWorking(bool Working);
 
 	bool IsActive();
+	bool IsSelect();
 	bool IsWorking();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -38,14 +40,29 @@ public:
 	bool bActive;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bSelect;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bWorking;
 
 public:
 	void ActionStart();
 	void ActionExit();
 
+	void SetLeftWorkOut(bool WorkOut);
+	void SetRightWorkOut(bool WorkOut);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	ARobotArm* RobotArm;
+	ARobotArm* LeftRobotArm;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ARobotArm* RightRobotArm;
+
+	bool bLeftWorkOut;
+	bool bRightWorkOut;
+
+public:
+	ADeliveryController* GetTargetDelivery();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ADeliveryController* TargetDelivery;

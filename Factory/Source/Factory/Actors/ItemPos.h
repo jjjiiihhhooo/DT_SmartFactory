@@ -4,6 +4,8 @@
 #include "GameFramework/Actor.h"
 #include "ItemPos.generated.h"
 
+class AItem;
+
 UCLASS()
 class FACTORY_API AItemPos : public AActor
 {
@@ -15,10 +17,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
-	void SetItem(AActor* NewItem);
-	void SetItemLocation(FVector Pos);
-	void SetItemRotation(FRotator Rot);
-	void SetItemAttach(AActor* Parent);
+	void SetItem(AItem* NewItem);
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -33,7 +32,7 @@ public:
 	bool IsReady();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	AActor* Item;
+	AItem* Item;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bSelect;

@@ -8,7 +8,7 @@
 
 class ASell;
 class AItemPos;
-
+class AItem;
 
 
 UCLASS()
@@ -55,11 +55,13 @@ private:
 public:
 	void SetTargetItemPos(AItemPos* ItemPos);
 
+	AItem* GetCurItem();
+
 	UPROPERTY()
 	AItemPos* TargetItemPos;
 
-	UPROPERTY()
-	AActor* CurAttachedItem;
+	UPROPERTY(EditAnywhere)
+	AItem* CurAttachedItem;
 
 public:
 	void SetTargetSell(ASell* Sell);

@@ -6,6 +6,8 @@
 #include "Containers/Queue.h"
 #include "Spawner.generated.h"
 
+class AItem;
+
 UCLASS()
 class FACTORY_API ASpawner : public AActor
 {
@@ -20,16 +22,17 @@ private:
 	void InitPool();
 	void CreateDelivery();
 	void CreateItem();
+	void CreateWheel();
 	void DeliveryEnqueue(ACharacter* Delivery);
-	void ItemEnqueue(AActor* Item);
-
-	UPROPERTY()
-	TSet<ACharacter*> DeliveryAllPooled;
-	UPROPERTY()
-	TSet<AActor*> ItemAllPooled;
-
+	void ItemEnqueue(AItem* Item);
+	void WheelEnqueue(AActor* Wheel);
+	
 	TQueue<ACharacter*> DeliveryQueue;
-	TQueue<AActor*> ItemQueue;
+	TQueue<AItem*> ItemQueue;
+	TQueue<AActor*> WheelQueue;
+
+	UPROPERTY()
+	TArray<UObject*> AllPoolArray;
 
 	int32 Count;
 
@@ -42,13 +45,19 @@ public:
 	ACharacter* GetDelivery();
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
-	AActor* GetItem();
+	AItem* GetItem();
+
+	UFUNCTION(BlueprintCallable, Category = "Pool")
+	AActor* GetWheel();
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
 	void ReturnDelivery(ACharacter* Delivery);
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
-	void ReturnItem(AActor* Item);
+	void ReturnItem(AItem* Item);
+
+	UFUNCTION(BlueprintCallable, Category = "Pool")
+	void ReturnWheel(AActor* Wheel);
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
 	int32 GetCount();
@@ -57,5 +66,8 @@ public:
 	TSubclassOf<ACharacter> DeliveryClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")
-	TSubclassOf<AActor> ItemClass;
+	TSubclassOf<AItem> ItemClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")
+	TSubclassOf<AActor> WheelClass;
 };
