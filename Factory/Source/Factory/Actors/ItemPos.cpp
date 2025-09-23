@@ -22,12 +22,8 @@ void AItemPos::Tick(float DeltaTime)
 	{
 		if (Item == nullptr)
 		{
-			AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
-			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
-			
-			SetItem(Spawner->GetItem());
-			Item->SetItemLocation(SpawnPos);
-			Item->SetItemRotation(FRotator::ZeroRotator);
+			CreateItem();
+
 			bReady = false;
 		}
 		else
@@ -46,9 +42,20 @@ void AItemPos::Tick(float DeltaTime)
 	}
 }
 
+
+void AItemPos::CreateItem()
+{
+	AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
+	ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
+
+	SetItem(Spawner->GetItem());
+}
+
 void AItemPos::SetItem(AItem* NewItem)
 {
 	Item = NewItem;
+	Item->SetActorLocation(SpawnPos);
+	Item->SetActorRotation(FRotator::ZeroRotator);
 }
 
 

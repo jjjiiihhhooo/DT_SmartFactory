@@ -67,20 +67,9 @@ void ADeliveryController::MoveResult()
 		}
 		case ECurrentMoveState::MovingToItemPos: 
 		{
-			TargetItemPos->Item->SetItemLocation(GetCharacter()->GetActorLocation());
-			TargetItemPos->Item->SetItemRotation(GetCharacter()->GetActorRotation());
-			TargetItemPos->Item->SetItemAttach(GetCharacter());
+			TargetItemPos->Item->SetItemAll(GetCharacter());
 
 			CurAttachedItem = TargetItemPos->Item;
-
-			if (CurAttachedItem == nullptr)
-			{
-				UE_LOG(LogTemp, Warning, TEXT("CurAttachedItem Null"));
-			}
-			else
-			{
-				UE_LOG(LogTemp, Warning, TEXT("CurAttachedItem Set"));
-			}
 
 			TargetItemPos->Item = nullptr;
 			TargetItemPos->SetSelect(false);
@@ -119,11 +108,8 @@ void ADeliveryController::MoveResult()
 
 			SetMoveState(ECurrentMoveState::MovingToEndPos);
 
-			AActor* ManagerActor = UGameplayStatics::GetActorOfClass(GetWorld(), AManager::StaticClass());
-			AManager* Manager = Cast<AManager>(ManagerActor);
-
 			FVector Cur = GetCharacter()->GetActorLocation();
-			FVector Target = Manager->GetEndAreaClosestPoint(Cur);
+			FVector Target = GetManager()->GetEndAreaClosestPoint(Cur);
 
 			SetTargetPos(CurrentMoveState, Target);
 
@@ -135,13 +121,7 @@ void ADeliveryController::MoveResult()
 		{
 			SetMoveState(ECurrentMoveState::MovingToEndOutPos);
 
-			CurAttachedItem->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-
-			AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
-			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
-
-			AItem* Item = Cast<AItem>(CurAttachedItem);
-			Spawner->ReturnItem(Item);
+			CurAttachedItem->ReturnItemToSpawner(GetSpawner());
 
 			CurAttachedItem = nullptr;
 
@@ -161,9 +141,7 @@ void ADeliveryController::MoveResult()
 		{
 			SetMoveState(ECurrentMoveState::None);
 
-			AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
-			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
-			Spawner->ReturnDelivery(GetCharacter());
+			GetSpawner()->ReturnDelivery(GetCharacter());
 
 			break;
 		}
@@ -211,16 +189,9 @@ AItem* ADeliveryController::GetCurItem()
 
 void ADeliveryController::SetTargetSell(ASell* Sell)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Name %s"), *Sell->GetName());
-	
 	TargetSell = Sell;
 	Sell->TargetDelivery = this;
 	
-	if (Sell->TargetDelivery == nullptr)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Sell Target Null"));
-	}
-
 	SetTargetPos(ECurrentMoveState::MovingToTargetPos, Sell->TargetSceneComp->GetComponentLocation());
 	SetTargetPos(ECurrentMoveState::MovingToWorkPos, Sell->WorkSceneComp->GetComponentLocation());
 	SetTargetPos(ECurrentMoveState::MovingToWorkOutPos, Sell->OutSceneComp->GetComponentLocation());
@@ -236,3 +207,17 @@ bool ADeliveryController::IsMove()
 	return bMove;
 }
 
+AManager* ADeliveryController::GetManager()
+{
+	AActor* ManagerActor = UGameplayStatics::GetActorOfClass(GetWorld(), AManager::StaticClass());
+	AManager* Manager = Cast<AManager>(ManagerActor);
+	return Manager;
+}
+
+ASpawner* ADeliveryController::GetSpawner()
+{
+	AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
+	ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
+
+	return Spawner;
+}

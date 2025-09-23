@@ -35,53 +35,13 @@ void ARobotArm::Action(float DeltaTime)
 	{
 		if (bHasWheel)
 		{
-			FVector Pos = Point->GetComponentLocation();
-
-			if (FVector::Distance(TargetPos[TargetIndex], Pos) > 3.0f)
-			{
-				Pos = FMath::VInterpConstantTo(Pos, TargetPos[TargetIndex], DeltaTime, MoveSpeed);
-				Point->SetWorldLocation(Pos);
-				if (TempWheel)
-				{
-					FVector Dir = Pos - TempWheel->GetActorLocation();
-					FRotator Rot = Dir.Rotation();
-					TempWheel->SetActorRotation(Rot);
-				}
-			}
-			else
-			{
-				TempWheel->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-				TempWheel->AttachToActor(ParentSell->GetTargetDelivery()->GetCurItem(), FAttachmentTransformRules::KeepWorldTransform);
-				TempWheel = nullptr;
-				TargetIndex++;
-				bHasWheel = false;
-			}
+			AttachWheelToCar(DeltaTime);
 		}
 		else
 		{
 			if (SettingIndex < WheelSettingPos.Num())
 			{
-				FVector Pos = Point->GetRelativeLocation();
-				
-
-				if (FVector::Distance(WheelSettingPos[SettingIndex], Pos) > 3.0f)
-				{
-					Pos = FMath::VInterpConstantTo(Pos, WheelSettingPos[SettingIndex], DeltaTime, MoveSpeed);
-					Point->SetRelativeLocation(Pos);
-				}
-				else
-				{
-					if (SettingIndex == 2)
-					{
-						AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
-						ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
-						TempWheel = Spawner->GetWheel();
-						TempWheel->SetActorLocationAndRotation(Point->GetComponentLocation(), FRotator::ZeroRotator);
-						TempWheel->AttachToComponent(Point, FAttachmentTransformRules::KeepWorldTransform);
-
-					}
-					SettingIndex++;
-				}
+				GetWheelFromStorage(DeltaTime);
 			}
 			else
 			{
@@ -92,17 +52,7 @@ void ARobotArm::Action(float DeltaTime)
 	}
 	else
 	{
-		if(FVector::Distance(IdlePos, Point->GetRelativeLocation()) > 3.0f)
-		{
-			FVector Pos = Point->GetRelativeLocation();
-			Pos = FMath::VInterpConstantTo(Pos, IdlePos, DeltaTime, MoveSpeed);
-			Point->SetRelativeLocation(Pos);
-		}
-		else
-		{
-			Point->SetRelativeLocation(IdlePos);
-			ActionExit();
-		}
+		ReturnToIdlePos(DeltaTime);
 	}
 }
 
@@ -127,15 +77,76 @@ void ARobotArm::ActionReady()
 {
 	AItem* Item = ParentSell->GetTargetDelivery()->GetCurItem();
 
-	if (Item == nullptr)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Item Null"));
-		return;
-	}
 	TargetPos = Left ? Item->GetLeftWheelPosArray() : Item->GetRightWheelPosArray();
-	
 	
 	bAction = true;
 }
 
+void ARobotArm::AttachWheelToCar(float DeltaTime)
+{
+	FVector Pos = Point->GetComponentLocation();
 
+	if (FVector::Distance(TargetPos[TargetIndex], Pos) > 3.0f)
+	{
+		Pos = FMath::VInterpConstantTo(Pos, TargetPos[TargetIndex], DeltaTime, MoveSpeed);
+		Point->SetWorldLocation(Pos);
+
+		if (TempWheel)
+		{
+			FVector Dir = Pos - TempWheel->GetActorLocation();
+			FRotator Rot = Dir.Rotation();
+			TempWheel->SetActorRotation(Rot);
+		}
+	}
+	else
+	{
+		AItem* Item = ParentSell->GetTargetDelivery()->GetCurItem();
+		Item->AddAttachedWheel(TempWheel);
+
+		TempWheel = nullptr;
+		TargetIndex++;
+		bHasWheel = false;
+	}
+}
+
+void ARobotArm::GetWheelFromStorage(float DeltaTime)
+{
+	FVector Pos = Point->GetRelativeLocation();
+
+	if (FVector::Distance(WheelSettingPos[SettingIndex], Pos) > 3.0f)
+	{
+		Pos = FMath::VInterpConstantTo(Pos, WheelSettingPos[SettingIndex], DeltaTime, MoveSpeed);
+		Point->SetRelativeLocation(Pos);
+	}
+	else
+	{
+		if (SettingIndex == 2)
+		{
+			AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
+			ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
+
+			TempWheel = Spawner->GetWheel();
+			TempWheel->SetActorLocationAndRotation(Point->GetComponentLocation(), FRotator::ZeroRotator);
+			TempWheel->AttachToComponent(Point, FAttachmentTransformRules::KeepWorldTransform);
+
+		}
+
+		SettingIndex++;
+	}
+}
+
+
+void ARobotArm::ReturnToIdlePos(float DeltaTime)
+{
+	if (FVector::Distance(IdlePos, Point->GetRelativeLocation()) > 3.0f)
+	{
+		FVector Pos = Point->GetRelativeLocation();
+		Pos = FMath::VInterpConstantTo(Pos, IdlePos, DeltaTime, MoveSpeed);
+		Point->SetRelativeLocation(Pos);
+	}
+	else
+	{
+		Point->SetRelativeLocation(IdlePos);
+		ActionExit();
+	}
+}

@@ -41,25 +41,14 @@ public:
 	FVector SpawnPoint;
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "Pool")
 	ACharacter* GetDelivery();
-
-	UFUNCTION(BlueprintCallable, Category = "Pool")
 	AItem* GetItem();
-
-	UFUNCTION(BlueprintCallable, Category = "Pool")
 	AActor* GetWheel();
 
-	UFUNCTION(BlueprintCallable, Category = "Pool")
 	void ReturnDelivery(ACharacter* Delivery);
-
-	UFUNCTION(BlueprintCallable, Category = "Pool")
 	void ReturnItem(AItem* Item);
-
-	UFUNCTION(BlueprintCallable, Category = "Pool")
 	void ReturnWheel(AActor* Wheel);
 
-	UFUNCTION(BlueprintCallable, Category = "Pool")
 	int32 GetCount();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")

@@ -1,5 +1,7 @@
 #include "Item.h"
+#include "../Managers/Spawner.h"
 #include "Components/SceneComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 AItem::AItem()
 {
@@ -19,20 +21,14 @@ void AItem::Tick(float DeltaTime)
 
 }
 
-void AItem::SetItemLocation(FVector Pos)
+void AItem::SetItemAll(AActor* Parent)
 {
-	SetActorLocation(Pos);
-}
-
-void AItem::SetItemRotation(FRotator Rot)
-{
-	SetActorRotation(Rot);
-}
-
-void AItem::SetItemAttach(AActor* Parent)
-{
+	SetActorLocation(Parent->GetActorLocation());
+	SetActorRotation(Parent->GetActorRotation());
 	AttachToActor(Parent, FAttachmentTransformRules::KeepWorldTransform);
 }
+
+
 
 TArray<FVector> AItem::GetLeftWheelPosArray()
 {
@@ -62,4 +58,31 @@ TArray<FVector> AItem::GetRightWheelPosArray()
 	}
 
 	return Array;
+}
+
+void AItem::AddAttachedWheel(AActor* WheelActor)
+{
+	WheelActor->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
+
+	WheelActor->SetActorRotation(LeftWheelArray[0]->GetComponentRotation());
+
+	AttachedWheelArray.Add(WheelActor);
+}
+
+void AItem::ReturnItemToSpawner(ASpawner* Spawner)
+{
+	DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+
+	ReturnWheelToSpawner(Spawner);
+
+	Spawner->ReturnItem(this);
+}
+
+void AItem::ReturnWheelToSpawner(ASpawner* Spawner)
+{
+	for(AActor* Wheel : AttachedWheelArray)
+	{
+		Wheel->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+		Spawner->ReturnWheel(Wheel);
+	}
 }

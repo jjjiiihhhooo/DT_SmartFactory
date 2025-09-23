@@ -17,6 +17,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
+	void CreateItem();
 	void SetItem(AItem* NewItem);
 
 public:

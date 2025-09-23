@@ -5,6 +5,7 @@
 #include "Item.generated.h"
 
 class USceneComponent;
+class ASpawner;
 
 UCLASS()
 class FACTORY_API AItem : public AActor
@@ -24,10 +25,17 @@ public:
 	TArray<USceneComponent*> RightWheelArray;
 
 public:
-	void SetItemLocation(FVector Pos);
-	void SetItemRotation(FRotator Rot);
-	void SetItemAttach(AActor* Parent);
+	void SetItemAll(AActor* Parent);
 
+public:
 	TArray<FVector> GetLeftWheelPosArray();
 	TArray<FVector> GetRightWheelPosArray();
+
+public:
+	void AddAttachedWheel(AActor* WheelActor);
+	void ReturnItemToSpawner(ASpawner* Spawner);
+	void ReturnWheelToSpawner(ASpawner* Spawner);
+
+	UPROPERTY()
+	TArray<AActor*> AttachedWheelArray;
 };

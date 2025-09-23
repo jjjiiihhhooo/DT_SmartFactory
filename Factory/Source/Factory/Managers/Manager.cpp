@@ -3,6 +3,7 @@
 #include "../AIController/DeliveryController.h"
 #include "../Actors/Sell.h"
 #include "../Actors/ItemPos.h"
+#include "Kismet/GameplayStatics.h"
 #include "Engine/TriggerBox.h"
 #include "Components/BoxComponent.h"
 
@@ -56,17 +57,11 @@ void AManager::Run(float DeltaTime)
 		{
 			if (ASell* FoundSell = SelectSell())
 			{
-				UE_LOG(LogTemp, Warning, TEXT("FoundSell %s"), *FoundSell->GetName());
 				FoundItemPos->SetSelect(true);
 				FoundSell->SetWorking(true);
 
-				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToIdlePos, IdlePos);
-				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToEndOutPos, EndOutPos);
-				ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToReturnPos, ReturnPos);
-				ReadyController->SetTargetSell(FoundSell);
-				ReadyController->SetTargetItemPos(FoundItemPos);
+				DeliverySetTarget(FoundSell, FoundItemPos);
 
-				ReadyController->SetMoveState(ADeliveryController::ECurrentMoveState::MovingToIdlePos);
 				ReadyController->AIMoveToTarget();
 
 				ReadyController = nullptr;
@@ -104,7 +99,6 @@ ASell* AManager::SelectSell()
 			if (!CurSell->IsSelect())
 			{
 				CurSell->SetSelect(true);
-				UE_LOG(LogTemp, Warning, TEXT("SelectSell %s"), *CurSell->GetName());
 				return CurSell;
 			}
 		}
@@ -125,6 +119,15 @@ FVector AManager::GetEndAreaClosestPoint(const FVector& InputPoint)
 	return ReturnPoint;
 }
 
+void AManager::DeliverySetTarget(ASell* Sell, AItemPos* ItemPos)
+{
+	ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToIdlePos, IdlePos);
+	ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToEndOutPos, EndOutPos);
+	ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToReturnPos, ReturnPos);
+	ReadyController->SetMoveState(ADeliveryController::ECurrentMoveState::MovingToIdlePos);
+	ReadyController->SetTargetSell(Sell);
+	ReadyController->SetTargetItemPos(ItemPos);
+}
 
 void AManager::SetReady(bool Ready)
 {

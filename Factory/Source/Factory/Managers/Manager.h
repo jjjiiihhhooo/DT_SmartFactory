@@ -31,13 +31,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Order")
 	int32 OrderCount;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Order")
-	int32 CurrentCount;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Order")
-	int32 CompleteCount;
-
 
 public:
 	AItemPos* SelectItemPos();
@@ -54,34 +47,34 @@ public:
 public:
 	FVector GetEndAreaClosestPoint(const FVector& InputPoint);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
 	FVector IdlePos;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
 	FVector EndPos;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
 	FVector EndOutPos;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
 	FVector ReturnPos;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
 	ATriggerBox* EndArea;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float TestSpeed;
+	
+public:
+	void DeliverySetTarget(ASell* Sell, AItemPos* ItemPos);
+	ADeliveryController* ReadyController;
 
 public:
 	UFUNCTION(BlueprintCallable)
 	void SetReady(bool Ready);
-
-private:
 	bool IsReady();
 
 	bool bReady;
-
-	ADeliveryController* ReadyController;
 
 private:
 	bool SpawnTime(float DeltaTime);

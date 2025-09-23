@@ -9,7 +9,8 @@
 class ASell;
 class AItemPos;
 class AItem;
-
+class ASpawner;
+class AManager;
 
 UCLASS()
 class FACTORY_API ADeliveryController : public AAIController
@@ -76,4 +77,8 @@ private:
 	bool IsMove();
 
 	bool bMove;
+
+public:
+	AManager* GetManager();
+	ASpawner* GetSpawner();
 };

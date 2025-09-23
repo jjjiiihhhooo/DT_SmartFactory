@@ -16,21 +16,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
-class AActor;
-class ACharacter;
-class AItem;
-
 // ********** Begin Class ASpawner *****************************************************************
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execGetCount); \
-	DECLARE_FUNCTION(execReturnWheel); \
-	DECLARE_FUNCTION(execReturnItem); \
-	DECLARE_FUNCTION(execReturnDelivery); \
-	DECLARE_FUNCTION(execGetWheel); \
-	DECLARE_FUNCTION(execGetItem); \
-	DECLARE_FUNCTION(execGetDelivery);
-
-
 FACTORY_API UClass* Z_Construct_UClass_ASpawner_NoRegister();
 
 #define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_14_INCLASS_NO_PURE_DECLS \
@@ -58,7 +44,6 @@ public: \
 #define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_14_INCLASS_NO_PURE_DECLS \
 	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Spawner_h_14_ENHANCED_CONSTRUCTORS \
 private: \

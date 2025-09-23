@@ -63,20 +63,20 @@ struct Z_Construct_UClass_ARobotArm_Statics
 		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Point_MetaData[] = {
-		{ "Category", "Action" },
+		{ "Category", "Position" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TargetPos_MetaData[] = {
-		{ "Category", "Action" },
+		{ "Category", "Position" },
 		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WheelSettingPos_MetaData[] = {
-		{ "Category", "Action" },
+		{ "Category", "Position" },
 		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IdlePos_MetaData[] = {
-		{ "Category", "Action" },
+		{ "Category", "Position" },
 		{ "ModuleRelativePath", "Actors/RobotArm.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MoveSpeed_MetaData[] = {
@@ -176,10 +176,10 @@ ARobotArm::~ARobotArm() {}
 struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ARobotArm, ARobotArm::StaticClass, TEXT("ARobotArm"), &Z_Registration_Info_UClass_ARobotArm, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARobotArm), 216936112U) },
+		{ Z_Construct_UClass_ARobotArm, ARobotArm::StaticClass, TEXT("ARobotArm"), &Z_Registration_Info_UClass_ARobotArm, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARobotArm), 1460976169U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_1388127361(TEXT("/Script/Factory"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_1904857031(TEXT("/Script/Factory"),
 	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Actors_RobotArm_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
