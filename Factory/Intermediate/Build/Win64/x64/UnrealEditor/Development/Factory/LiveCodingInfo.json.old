@@ -2,14 +2,16 @@
 	"RemapUnityFiles": 
 	{
 		"Module.Factory.gen.cpp.obj": [
+			"CameraManager.gen.cpp.obj",
 			"DeliveryController.gen.cpp.obj",
+			"Item.gen.cpp.obj",
 			"ItemPos.gen.cpp.obj",
+			"RobotArm.gen.cpp.obj",
 			"Sell.gen.cpp.obj",
 			"Spawner.gen.cpp.obj",
+			"DataManager.gen.cpp.obj",
 			"Factory.init.gen.cpp.obj",
-			"Item.gen.cpp.obj",
-			"Manager.gen.cpp.obj",
-			"RobotArm.gen.cpp.obj"
+			"Manager.gen.cpp.obj"
 		]
 	}
 }

@@ -15,6 +15,11 @@
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Robot/BP_RightRobotArm.uasset",
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Robot/BP_LeftRobotArm.uasset",
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Meshes/RobotLarge/CR_RobotArm.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Manager/BP_DataManager.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Manager/BP_CameraManager.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Position/BP_ItemPos.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Position/BP_Sell.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Widget/WBP_CameraMenu.uasset",
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Robot/BP_RobotArm.uasset"
 			]
 		}

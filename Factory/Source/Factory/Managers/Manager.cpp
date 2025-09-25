@@ -1,10 +1,6 @@
 #include "Manager.h"
-#include "Spawner.h"
-#include "../AIController/DeliveryController.h"
-#include "../Actors/Sell.h"
-#include "../Actors/ItemPos.h"
+#include "DataManager.h"
 #include "Kismet/GameplayStatics.h"
-#include "Engine/TriggerBox.h"
 #include "Components/BoxComponent.h"
 
 AManager::AManager()
@@ -31,7 +27,7 @@ void AManager::Tick(float DeltaTime)
 
 void AManager::Run(float DeltaTime)
 {
-	if (OrderCount <= 0)
+	if (DataManager->GetOrderCount() <= 0)
 	{
 		return;
 	}
@@ -41,92 +37,32 @@ void AManager::Run(float DeltaTime)
 		return;
 	}
 
-	if (ReadyController == nullptr)
+	if (!DataManager->IsControllerExist())
 	{
-		if (ACharacter* Delivery = Spawner->GetDelivery())
-		{
-			if (AController* Controller = Delivery->GetController())
-			{
-				ReadyController = Cast<ADeliveryController>(Controller);
-			}
-		}
+		DataManager->SetReadyController();
 	}
 	else
 	{
-		if (AItemPos* FoundItemPos = SelectItemPos())
+		if (DataManager->StartDeliveryProcess())
 		{
-			if (ASell* FoundSell = SelectSell())
-			{
-				FoundItemPos->SetSelect(true);
-				FoundSell->SetWorking(true);
-
-				DeliverySetTarget(FoundSell, FoundItemPos);
-
-				ReadyController->AIMoveToTarget();
-
-				ReadyController = nullptr;
-
-				CurTime = MaxTime;
-				OrderCount--;
-			}
+			CurTime = MaxTime;
+			DataManager->SetOrderCount(DataManager->GetOrderCount() - 1);
 		}
+
 	}
 }
 
-AItemPos* AManager::SelectItemPos()
-{
-	for (AItemPos* CurItem : ItemPosArray)
-	{
-		if (CurItem->Item)
-		{
-			if (!CurItem->IsSelect() && CurItem->IsReady())
-			{
-				return CurItem;
-			}
-		}
-	}
-
-	return nullptr;
-}
-
-
-ASell* AManager::SelectSell()
-{
-	for (ASell* CurSell : SellArray)
-	{
-		if (CurSell->IsActive())
-		{
-			if (!CurSell->IsSelect())
-			{
-				CurSell->SetSelect(true);
-				return CurSell;
-			}
-		}
-	}
-
-	return nullptr;
-}
 
 FVector AManager::GetEndAreaClosestPoint(const FVector& InputPoint)
 {
 	FVector ReturnPoint = FVector::ZeroVector;
 	
-	if (UBoxComponent* Box = EndArea->FindComponentByClass<UBoxComponent>())
+	if (UBoxComponent* Box = DataManager->GetEndAreaBoxComp())
 	{
 		Box->GetClosestPointOnCollision(InputPoint, ReturnPoint);
 	}
 
 	return ReturnPoint;
-}
-
-void AManager::DeliverySetTarget(ASell* Sell, AItemPos* ItemPos)
-{
-	ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToIdlePos, IdlePos);
-	ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToEndOutPos, EndOutPos);
-	ReadyController->SetTargetPos(ADeliveryController::ECurrentMoveState::MovingToReturnPos, ReturnPos);
-	ReadyController->SetMoveState(ADeliveryController::ECurrentMoveState::MovingToIdlePos);
-	ReadyController->SetTargetSell(Sell);
-	ReadyController->SetTargetItemPos(ItemPos);
 }
 
 void AManager::SetReady(bool Ready)

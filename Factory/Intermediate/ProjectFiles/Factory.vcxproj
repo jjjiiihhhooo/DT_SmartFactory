@@ -282,6 +282,14 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\Factory\AIController\DeliveryController.h"/>
+    <ClCompile Include="..\..\Source\Factory\Managers\CameraManager.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\Managers\CameraManager.h"/>
+    <ClCompile Include="..\..\Source\Factory\Managers\DataManager.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\Managers\DataManager.h"/>
     <ClCompile Include="..\..\Source\Factory\Managers\Manager.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

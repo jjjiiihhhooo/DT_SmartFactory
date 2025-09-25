@@ -78,6 +78,18 @@
     <Filter Include="Source\Factory\Managers">
       <UniqueIdentifier>{7211EC81-3B0C-3C05-B781-A4F7C956DB15}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Factory\Managers\CameraManager.cpp">
+      <Filter>Source\Factory\Managers</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\Managers\CameraManager.h">
+      <Filter>Source\Factory\Managers</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Factory\Managers\DataManager.cpp">
+      <Filter>Source\Factory\Managers</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Factory\Managers\DataManager.h">
+      <Filter>Source\Factory\Managers</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Factory\Managers\Manager.cpp">
       <Filter>Source\Factory\Managers</Filter>
     </ClCompile>

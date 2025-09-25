@@ -3,13 +3,15 @@
 	{
 		"Module.Factory.gen.cpp.obj": [
 			"DeliveryController.gen.cpp.obj",
-			"ItemPos.gen.cpp.obj",
-			"Sell.gen.cpp.obj",
-			"Factory.init.gen.cpp.obj",
 			"Item.gen.cpp.obj",
-			"Manager.gen.cpp.obj",
+			"ItemPos.gen.cpp.obj",
 			"RobotArm.gen.cpp.obj",
-			"Spawner.gen.cpp.obj"
+			"Sell.gen.cpp.obj",
+			"Spawner.gen.cpp.obj",
+			"CameraManager.gen.cpp.obj",
+			"DataManager.gen.cpp.obj",
+			"Factory.init.gen.cpp.obj",
+			"Manager.gen.cpp.obj"
 		]
 	}
 }
