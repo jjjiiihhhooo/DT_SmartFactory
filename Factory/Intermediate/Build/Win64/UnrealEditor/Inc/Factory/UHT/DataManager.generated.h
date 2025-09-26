@@ -16,10 +16,32 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
+class ASell;
+
+// ********** Begin Delegate FOnCountChanged *******************************************************
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_14_DELEGATE \
+FACTORY_API void FOnCountChanged_DelegateWrapper(const FMulticastScriptDelegate& OnCountChanged);
+
+
+// ********** End Delegate FOnCountChanged *********************************************************
+
 // ********** Begin Class ADataManager *************************************************************
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execIncreaseCompletedCount); \
+	DECLARE_FUNCTION(execDecreaseDeliveryCount); \
+	DECLARE_FUNCTION(execIncreaseDeliveryCount); \
+	DECLARE_FUNCTION(execDecreaseOrderCount); \
+	DECLARE_FUNCTION(execIncreaseOrderCount); \
+	DECLARE_FUNCTION(execGetDeliveryCount); \
+	DECLARE_FUNCTION(execGetCompletedCount); \
+	DECLARE_FUNCTION(execGetOrderCount); \
+	DECLARE_FUNCTION(execToggleSellState); \
+	DECLARE_FUNCTION(execGetSellAt);
+
+
 FACTORY_API UClass* Z_Construct_UClass_ADataManager_NoRegister();
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_17_INCLASS_NO_PURE_DECLS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesADataManager(); \
 	friend struct Z_Construct_UClass_ADataManager_Statics; \
@@ -30,7 +52,7 @@ public: \
 	DECLARE_SERIALIZER(ADataManager)
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_17_ENHANCED_CONSTRUCTORS \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_19_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	ADataManager(ADataManager&&) = delete; \
 	ADataManager(const ADataManager&) = delete; \
@@ -40,12 +62,13 @@ public: \
 	NO_API virtual ~ADataManager();
 
 
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_14_PROLOG
-#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_17_GENERATED_BODY \
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_16_PROLOG
+#define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_17_INCLASS_NO_PURE_DECLS \
-	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_17_ENHANCED_CONSTRUCTORS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_19_INCLASS_NO_PURE_DECLS \
+	FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

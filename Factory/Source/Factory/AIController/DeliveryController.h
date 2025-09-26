@@ -3,13 +3,11 @@
 #include "CoreMinimal.h"
 #include "AIController.h"
 #include "Navigation/PathFollowingComponent.h"
-#include "Navigation/CrowdFollowingComponent.h"
 #include "DeliveryController.generated.h"
 
 class ASell;
 class AItemPos;
 class AItem;
-class ASpawner;
 class AManager;
 
 UCLASS()
@@ -80,5 +78,4 @@ private:
 
 public:
 	AManager* GetManager();
-	ASpawner* GetSpawner();
 };

@@ -41,6 +41,12 @@ private:
 	float CurTime;
 
 public:
+	ADataManager* GetDataManager();
+	ASpawner* GetSpawner();
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ADataManager* DataManager;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ASpawner* Spawner;
 };

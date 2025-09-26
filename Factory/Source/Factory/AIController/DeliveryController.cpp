@@ -3,6 +3,7 @@
 #include "GameFramework/Character.h"
 #include "../Managers/Spawner.h"
 #include "../Managers/Manager.h"
+#include "../Managers/DataManager.h"
 #include "../Actors/Sell.h"
 #include "../Actors/Item.h"
 #include "../Actors/ItemPos.h"
@@ -121,7 +122,9 @@ void ADeliveryController::MoveResult()
 		{
 			SetMoveState(ECurrentMoveState::MovingToEndOutPos);
 
-			CurAttachedItem->ReturnItemToSpawner(GetSpawner());
+			GetManager()->GetDataManager()->IncreaseCompletedCount();
+
+			CurAttachedItem->ReturnItemToSpawner(GetManager()->GetSpawner());
 
 			CurAttachedItem = nullptr;
 
@@ -141,7 +144,8 @@ void ADeliveryController::MoveResult()
 		{
 			SetMoveState(ECurrentMoveState::None);
 
-			GetSpawner()->ReturnDelivery(GetCharacter());
+			GetManager()->GetDataManager()->DecreaseCurrentDeliveryCount();
+			GetManager()->GetSpawner()->ReturnDelivery(GetCharacter());
 
 			break;
 		}
@@ -212,12 +216,4 @@ AManager* ADeliveryController::GetManager()
 	AActor* ManagerActor = UGameplayStatics::GetActorOfClass(GetWorld(), AManager::StaticClass());
 	AManager* Manager = Cast<AManager>(ManagerActor);
 	return Manager;
-}
-
-ASpawner* ADeliveryController::GetSpawner()
-{
-	AActor* SpawnerActor = UGameplayStatics::GetActorOfClass(GetWorld(), ASpawner::StaticClass());
-	ASpawner* Spawner = Cast<ASpawner>(SpawnerActor);
-
-	return Spawner;
 }

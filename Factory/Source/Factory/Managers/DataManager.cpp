@@ -20,12 +20,7 @@ void ADataManager::BeginPlay()
 
 bool ADataManager::IsControllerExist()
 {
-	if (ReadyController)
-	{
-		return true;
-	}
-
-	return false;
+	return ReadyController != nullptr;
 }
 
 void ADataManager::SetReadyController()
@@ -110,6 +105,24 @@ ASell* ADataManager::SelectSell()
 	return nullptr;
 }
 
+ASell* ADataManager::GetSellAt(int32 Index)
+{
+	if (SellArray.IsValidIndex(Index))
+	{
+		return SellArray[Index];
+	}
+
+	return nullptr;
+}
+
+void ADataManager::ToggleSellState(int32 Index)
+{
+	if (ASell* Sell = GetSellAt(Index))
+	{
+		Sell->SetActive(!Sell->IsActive());
+	}
+}
+
 UBoxComponent* ADataManager::GetEndAreaBoxComp()
 {
 	return EndArea->FindComponentByClass<UBoxComponent>();
@@ -121,17 +134,76 @@ int32 ADataManager::GetOrderCount()
 	return OrderCount;
 }
 
-int32 ADataManager::GetCurrentCount()
+int32 ADataManager::GetCompletedCount()
 {
-	return CurrentCount;
+	return CompletedCount;
 }
 
-int32 ADataManager::GetCompleteCount()
+int32 ADataManager::GetDeliveryCount()
 {
-	return CompleteCount;
+	return DeliveryCount;
+}
+
+int32 ADataManager::GetCurrentDeliveryCount()
+{
+	return CurrentDeliveryCount;
+}
+
+void ADataManager::IncreaseOrderCount()
+{
+	OrderCount++;
+	OnOrderCountUpdate.Broadcast();
+}
+
+void ADataManager::DecreaseOrderCount()
+{
+	if (GetOrderCount() > 0)
+	{
+		OrderCount--;
+		OnOrderCountUpdate.Broadcast();
+	}
+}
+
+void ADataManager::IncreaseDeliveryCount()
+{
+	DeliveryCount++;
+	OnDeliveryCountUpdate.Broadcast();
+}
+
+void ADataManager::DecreaseDeliveryCount()
+{
+	if(GetDeliveryCount() > 0)
+	{
+		DeliveryCount--;
+		OnDeliveryCountUpdate.Broadcast();
+	}
+}
+
+void ADataManager::IncreaseCompletedCount()
+{
+	CompletedCount++;
+	OnCompletedCountUpdate.Broadcast();
+}
+
+void ADataManager::IncreaseCurrentDeliveryCount()
+{
+	CurrentDeliveryCount++;
+}
+
+void ADataManager::DecreaseCurrentDeliveryCount()
+{
+	if(GetCurrentDeliveryCount() > 0)
+	{
+		CurrentDeliveryCount--;
+	}
 }
 
 void ADataManager::SetOrderCount(int32 Count)
 {
 	OrderCount = Count;
+}
+
+bool ADataManager::IsDeliveryFull()
+{
+	return GetCurrentDeliveryCount() >= GetDeliveryCount();
 }

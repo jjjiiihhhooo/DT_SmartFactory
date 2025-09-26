@@ -1,5 +1,6 @@
 #include "Manager.h"
 #include "DataManager.h"
+#include "Spawner.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/BoxComponent.h"
 
@@ -37,6 +38,11 @@ void AManager::Run(float DeltaTime)
 		return;
 	}
 
+	if (DataManager->IsDeliveryFull())
+	{
+		return;
+	}
+
 	if (!DataManager->IsControllerExist())
 	{
 		DataManager->SetReadyController();
@@ -45,8 +51,10 @@ void AManager::Run(float DeltaTime)
 	{
 		if (DataManager->StartDeliveryProcess())
 		{
+			DataManager->IncreaseCurrentDeliveryCount();
+			DataManager->DecreaseOrderCount();
+
 			CurTime = MaxTime;
-			DataManager->SetOrderCount(DataManager->GetOrderCount() - 1);
 		}
 
 	}
@@ -84,4 +92,14 @@ bool AManager::SpawnTime(float DeltaTime)
 	}
 
 	return true;
+}
+
+ADataManager* AManager::GetDataManager()
+{
+	return DataManager;
+}
+
+ASpawner* AManager::GetSpawner()
+{
+	return Spawner;
 }

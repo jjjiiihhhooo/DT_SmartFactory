@@ -3,6 +3,7 @@
 #include "D:/JIHO/UE5/DT_SmartFactory/Factory/Intermediate/Build/Win64/UnrealEditor/Inc/Factory/UHT/DeliveryController.gen.cpp"
 #include "D:/JIHO/UE5/DT_SmartFactory/Factory/Intermediate/Build/Win64/UnrealEditor/Inc/Factory/UHT/Item.gen.cpp"
 #include "D:/JIHO/UE5/DT_SmartFactory/Factory/Intermediate/Build/Win64/UnrealEditor/Inc/Factory/UHT/ItemPos.gen.cpp"
+#include "D:/JIHO/UE5/DT_SmartFactory/Factory/Intermediate/Build/Win64/UnrealEditor/Inc/Factory/UHT/Manager.gen.cpp"
 #include "D:/JIHO/UE5/DT_SmartFactory/Factory/Intermediate/Build/Win64/UnrealEditor/Inc/Factory/UHT/RobotArm.gen.cpp"
 #include "D:/JIHO/UE5/DT_SmartFactory/Factory/Intermediate/Build/Win64/UnrealEditor/Inc/Factory/UHT/Sell.gen.cpp"
 #include "D:/JIHO/UE5/DT_SmartFactory/Factory/Intermediate/Build/Win64/UnrealEditor/Inc/Factory/UHT/Spawner.gen.cpp"
