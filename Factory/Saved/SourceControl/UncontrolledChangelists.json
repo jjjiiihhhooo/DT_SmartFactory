@@ -20,6 +20,10 @@
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Position/BP_ItemPos.uasset",
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Position/BP_Sell.uasset",
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Widget/WBP_CameraMenu.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Widget/WBP_MainInfo.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Manager/BP_Manager.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Image/circle.uasset",
+				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Image/white_circle.uasset",
 				"D:/JIHO/UE5/DT_SmartFactory/Factory/Content/Blueprints/Robot/BP_RobotArm.uasset"
 			]
 		}
