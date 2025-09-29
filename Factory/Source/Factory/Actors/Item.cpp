@@ -85,4 +85,6 @@ void AItem::ReturnWheelToSpawner(ASpawner* Spawner)
 		Wheel->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 		Spawner->ReturnWheel(Wheel);
 	}
+
+	AttachedWheelArray.Empty();
 }
