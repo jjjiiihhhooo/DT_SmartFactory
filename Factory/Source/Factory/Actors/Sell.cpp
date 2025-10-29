@@ -45,17 +45,17 @@ void ASell::SetWorking(bool Working)
 	bWorking = Working;
 }
 
-bool ASell::IsActive()
+bool ASell::IsActive() const
 {
 	return bActive;
 }
-
-bool ASell::IsSelect()
+ 
+bool ASell::IsSelect() const
 {
 	return bSelect;
 }
 
-bool ASell::IsWorking()
+bool ASell::IsWorking() const
 {
 	if(bLeftWorkOut && bRightWorkOut)
 	{
@@ -99,7 +99,7 @@ void ASell::SetRightWorkOut(bool WorkOut)
 	bRightWorkOut = WorkOut;
 }
 
-ADeliveryController* ASell::GetTargetDelivery()
+ADeliveryController* ASell::GetTargetDelivery() const
 {
 	return TargetDelivery;
 }

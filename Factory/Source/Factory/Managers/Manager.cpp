@@ -61,7 +61,7 @@ void AManager::Run(float DeltaTime)
 }
 
 
-FVector AManager::GetEndAreaClosestPoint(const FVector& InputPoint)
+FVector AManager::GetEndAreaClosestPoint(const FVector& InputPoint) const
 {
 	FVector ReturnPoint = FVector::ZeroVector;
 	
@@ -78,7 +78,7 @@ void AManager::SetReady(bool Ready)
 	bReady = Ready;
 }
 
-bool AManager::IsReady()
+bool AManager::IsReady() const
 {
 	return bReady;
 }
@@ -94,12 +94,12 @@ bool AManager::SpawnTime(float DeltaTime)
 	return true;
 }
 
-ADataManager* AManager::GetDataManager()
+ADataManager* AManager::GetDataManager() const
 {
 	return DataManager;
 }
 
-ASpawner* AManager::GetSpawner()
+ASpawner* AManager::GetSpawner() const
 {
 	return Spawner;
 }

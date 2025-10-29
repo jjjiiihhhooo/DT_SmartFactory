@@ -28,16 +28,7 @@ void AItemPos::Tick(float DeltaTime)
 		}
 		else
 		{
-			FVector ItemPos = Item->GetActorLocation();
-			if (FVector::Distance(ItemPos, IdlePos) > 5.0f && !bReady)
-			{
-				ItemPos = FMath::VInterpConstantTo(ItemPos, IdlePos, DeltaTime, 400);
-				Item->SetActorLocation(ItemPos);
-			}
-			else
-			{
-				bReady = true;
-			}
+			MoveToIdlePos(DeltaTime);
 		}
 	}
 }
@@ -58,19 +49,36 @@ void AItemPos::SetItem(AItem* NewItem)
 	Item->SetActorRotation(FRotator::ZeroRotator);
 }
 
+void AItemPos::MoveToIdlePos(float DeltaTime)
+{
+	if (bReady)
+	{
+		return;
+	}
 
+	FVector ItemPos = Item->GetActorLocation();
+	if (FVector::Distance(ItemPos, IdlePos) > 5.0f && !bReady)
+	{
+		ItemPos = FMath::VInterpConstantTo(ItemPos, IdlePos, DeltaTime, 400);
+		Item->SetActorLocation(ItemPos);
+	}
+	else
+	{
+		bReady = true;
+	}
+}
 
 void AItemPos::SetSelect(bool Select)
 {
 	bSelect = Select;
 }
 
-bool AItemPos::IsSelect()
+bool AItemPos::IsSelect() const
 {
 	return bSelect;
 }
 
-bool AItemPos::IsReady()
+bool AItemPos::IsReady() const
 {
 	return bReady;
 }

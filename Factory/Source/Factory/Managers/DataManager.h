@@ -27,9 +27,9 @@ public:
 	ASpawner* Spawner;
 
 public:
-	bool IsControllerExist();
+	bool IsControllerExist() const;
 	void SetReadyController();
-	ADeliveryController* GetReadyController();
+	ADeliveryController* GetReadyController() const;
 	void DeliverySetTarget(ASell* Sell, AItemPos* ItemPos);
 	bool StartDeliveryProcess();
 
@@ -45,25 +45,25 @@ public:
 	ADeliveryController* ReadyController;
 
 public:
-	AItemPos* SelectItemPos();
+	AItemPos* SelectItemPos() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<AItemPos*> ItemPosArray;
 
 public:
-	ASell* SelectSell();
+	ASell* SelectSell() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Sell")
-	ASell* GetSellAt(int32 Index);
+	ASell* GetSellAt(int32 Index) const;
 
 	UFUNCTION(BlueprintCallable, Category = "Sell")
-	void ToggleSellState(int32 Index);
+	void ToggleSellState(int32 Index) const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<ASell*> SellArray;
 
 public:
-	UBoxComponent* GetEndAreaBoxComp();
+	UBoxComponent* GetEndAreaBoxComp() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Position")
 	ATriggerBox* EndArea;
@@ -82,15 +82,15 @@ public:
 
 public:
 	UFUNCTION(BlueprintPure, Category = "Count")
-	int32 GetOrderCount();
+	int32 GetOrderCount() const;
 
 	UFUNCTION(BlueprintPure, Category = "Count")
-	int32 GetCompletedCount();
+	int32 GetCompletedCount() const;
 
 	UFUNCTION(BlueprintPure, Category = "Count")
-	int32 GetDeliveryCount();
+	int32 GetDeliveryCount() const;
 
-	int32 GetCurrentDeliveryCount();
+	int32 GetCurrentDeliveryCount() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Count")
 	void IncreaseOrderCount();
@@ -112,7 +112,7 @@ public:
 	
 	void SetOrderCount(int32 Count);
 
-	bool IsDeliveryFull();
+	bool IsDeliveryFull() const;
 
 	UPROPERTY(VisibleAnywhere, Category = "Count")
 	int32 OrderCount;

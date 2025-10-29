@@ -18,7 +18,7 @@ void ADataManager::BeginPlay()
 	Super::BeginPlay();
 }
 
-bool ADataManager::IsControllerExist()
+bool ADataManager::IsControllerExist() const
 {
 	return ReadyController != nullptr;
 }
@@ -34,7 +34,7 @@ void ADataManager::SetReadyController()
 	}
 }
 
-ADeliveryController* ADataManager::GetReadyController()
+ADeliveryController* ADataManager::GetReadyController() const
 {
 	return ReadyController;
 }
@@ -71,7 +71,7 @@ bool ADataManager::StartDeliveryProcess()
 	return false;
 }
 
-AItemPos* ADataManager::SelectItemPos()
+AItemPos* ADataManager::SelectItemPos() const
 {
 	for (AItemPos* CurItem : ItemPosArray)
 	{
@@ -88,7 +88,7 @@ AItemPos* ADataManager::SelectItemPos()
 }
 
 
-ASell* ADataManager::SelectSell()
+ASell* ADataManager::SelectSell() const
 {
 	for (ASell* CurSell : SellArray)
 	{
@@ -105,7 +105,7 @@ ASell* ADataManager::SelectSell()
 	return nullptr;
 }
 
-ASell* ADataManager::GetSellAt(int32 Index)
+ASell* ADataManager::GetSellAt(int32 Index) const
 {
 	if (SellArray.IsValidIndex(Index))
 	{
@@ -115,7 +115,7 @@ ASell* ADataManager::GetSellAt(int32 Index)
 	return nullptr;
 }
 
-void ADataManager::ToggleSellState(int32 Index)
+void ADataManager::ToggleSellState(int32 Index) const
 {
 	if (ASell* Sell = GetSellAt(Index))
 	{
@@ -123,28 +123,28 @@ void ADataManager::ToggleSellState(int32 Index)
 	}
 }
 
-UBoxComponent* ADataManager::GetEndAreaBoxComp()
+UBoxComponent* ADataManager::GetEndAreaBoxComp() const
 {
 	return EndArea->FindComponentByClass<UBoxComponent>();
 }
 
 
-int32 ADataManager::GetOrderCount()
+int32 ADataManager::GetOrderCount() const
 {
 	return OrderCount;
 }
 
-int32 ADataManager::GetCompletedCount()
+int32 ADataManager::GetCompletedCount() const
 {
 	return CompletedCount;
 }
 
-int32 ADataManager::GetDeliveryCount()
+int32 ADataManager::GetDeliveryCount() const
 {
 	return DeliveryCount;
 }
 
-int32 ADataManager::GetCurrentDeliveryCount()
+int32 ADataManager::GetCurrentDeliveryCount() const
 {
 	return CurrentDeliveryCount;
 }
@@ -203,7 +203,7 @@ void ADataManager::SetOrderCount(int32 Count)
 	OrderCount = Count;
 }
 
-bool ADataManager::IsDeliveryFull()
+bool ADataManager::IsDeliveryFull() const
 {
 	return GetCurrentDeliveryCount() >= GetDeliveryCount();
 }

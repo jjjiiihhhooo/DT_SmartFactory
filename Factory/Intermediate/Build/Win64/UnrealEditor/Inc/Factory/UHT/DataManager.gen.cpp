@@ -132,7 +132,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADataM
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "GetCompletedCount", Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::DataManager_eventGetCompletedCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "GetCompletedCount", Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::DataManager_eventGetCompletedCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_ADataManager_GetCompletedCount_Statics::DataManager_eventGetCompletedCount_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADataManager_GetCompletedCount()
 {
@@ -174,7 +174,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADataM
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "GetDeliveryCount", Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::DataManager_eventGetDeliveryCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "GetDeliveryCount", Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::DataManager_eventGetDeliveryCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_ADataManager_GetDeliveryCount_Statics::DataManager_eventGetDeliveryCount_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADataManager_GetDeliveryCount()
 {
@@ -216,7 +216,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADataM
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "GetOrderCount", Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::DataManager_eventGetOrderCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "GetOrderCount", Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::DataManager_eventGetOrderCount_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_ADataManager_GetOrderCount_Statics::DataManager_eventGetOrderCount_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADataManager_GetOrderCount()
 {
@@ -262,7 +262,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADataM
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADataManager_GetSellAt_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetSellAt_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_GetSellAt_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "GetSellAt", Z_Construct_UFunction_ADataManager_GetSellAt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetSellAt_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_GetSellAt_Statics::DataManager_eventGetSellAt_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetSellAt_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_GetSellAt_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_GetSellAt_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "GetSellAt", Z_Construct_UFunction_ADataManager_GetSellAt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetSellAt_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_GetSellAt_Statics::DataManager_eventGetSellAt_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_GetSellAt_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_GetSellAt_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_ADataManager_GetSellAt_Statics::DataManager_eventGetSellAt_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADataManager_GetSellAt()
 {
@@ -395,7 +395,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADataM
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::NewProp_Index,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "ToggleSellState", Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::DataManager_eventToggleSellState_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADataManager, nullptr, "ToggleSellState", Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::DataManager_eventToggleSellState_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x44020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_ADataManager_ToggleSellState_Statics::DataManager_eventToggleSellState_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADataManager_ToggleSellState()
 {
@@ -548,14 +548,14 @@ struct Z_Construct_UClass_ADataManager_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ADataManager_DecreaseDeliveryCount, "DecreaseDeliveryCount" }, // 2116928913
 		{ &Z_Construct_UFunction_ADataManager_DecreaseOrderCount, "DecreaseOrderCount" }, // 261092312
-		{ &Z_Construct_UFunction_ADataManager_GetCompletedCount, "GetCompletedCount" }, // 3036427531
-		{ &Z_Construct_UFunction_ADataManager_GetDeliveryCount, "GetDeliveryCount" }, // 3922286141
-		{ &Z_Construct_UFunction_ADataManager_GetOrderCount, "GetOrderCount" }, // 1879862044
-		{ &Z_Construct_UFunction_ADataManager_GetSellAt, "GetSellAt" }, // 3708410945
+		{ &Z_Construct_UFunction_ADataManager_GetCompletedCount, "GetCompletedCount" }, // 2116842787
+		{ &Z_Construct_UFunction_ADataManager_GetDeliveryCount, "GetDeliveryCount" }, // 2184520952
+		{ &Z_Construct_UFunction_ADataManager_GetOrderCount, "GetOrderCount" }, // 1011440243
+		{ &Z_Construct_UFunction_ADataManager_GetSellAt, "GetSellAt" }, // 115515708
 		{ &Z_Construct_UFunction_ADataManager_IncreaseCompletedCount, "IncreaseCompletedCount" }, // 4070572963
 		{ &Z_Construct_UFunction_ADataManager_IncreaseDeliveryCount, "IncreaseDeliveryCount" }, // 1083991575
 		{ &Z_Construct_UFunction_ADataManager_IncreaseOrderCount, "IncreaseOrderCount" }, // 4122275551
-		{ &Z_Construct_UFunction_ADataManager_ToggleSellState, "ToggleSellState" }, // 4163970411
+		{ &Z_Construct_UFunction_ADataManager_ToggleSellState, "ToggleSellState" }, // 893407866
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -634,10 +634,10 @@ ADataManager::~ADataManager() {}
 struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADataManager, ADataManager::StaticClass, TEXT("ADataManager"), &Z_Registration_Info_UClass_ADataManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADataManager), 3223958908U) },
+		{ Z_Construct_UClass_ADataManager, ADataManager::StaticClass, TEXT("ADataManager"), &Z_Registration_Info_UClass_ADataManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADataManager), 3605942744U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h__Script_Factory_2151030771(TEXT("/Script/Factory"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h__Script_Factory_998104570(TEXT("/Script/Factory"),
 	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_DataManager_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

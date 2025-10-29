@@ -28,8 +28,8 @@ public:
 	void SetItemAll(AActor* Parent);
 
 public:
-	TArray<FVector> GetLeftWheelPosArray();
-	TArray<FVector> GetRightWheelPosArray();
+	TArray<FVector> GetLeftWheelPosArray() const;
+	TArray<FVector> GetRightWheelPosArray() const;
 
 public:
 	void AddAttachedWheel(AActor* WheelActor);

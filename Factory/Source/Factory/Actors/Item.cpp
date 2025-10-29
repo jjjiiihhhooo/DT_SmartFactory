@@ -30,7 +30,7 @@ void AItem::SetItemAll(AActor* Parent)
 
 
 
-TArray<FVector> AItem::GetLeftWheelPosArray()
+TArray<FVector> AItem::GetLeftWheelPosArray() const
 {
 	TArray<FVector> Array;
 
@@ -45,7 +45,7 @@ TArray<FVector> AItem::GetLeftWheelPosArray()
 	return Array;
 }
 
-TArray<FVector> AItem::GetRightWheelPosArray()
+TArray<FVector> AItem::GetRightWheelPosArray() const
 {
 	TArray<FVector> Array;
 

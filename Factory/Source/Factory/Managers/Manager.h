@@ -25,12 +25,12 @@ public:
 	void Run(float DeltaTime);
 
 public:
-	FVector GetEndAreaClosestPoint(const FVector& InputPoint);
+	FVector GetEndAreaClosestPoint(const FVector& InputPoint) const;
 
 public:
 	UFUNCTION(BlueprintCallable)
 	void SetReady(bool Ready);
-	bool IsReady();
+	bool IsReady() const;
 
 	bool bReady;
 
@@ -41,8 +41,8 @@ private:
 	float CurTime;
 
 public:
-	ADataManager* GetDataManager();
-	ASpawner* GetSpawner();
+	ADataManager* GetDataManager() const;
+	ASpawner* GetSpawner() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ADataManager* DataManager;

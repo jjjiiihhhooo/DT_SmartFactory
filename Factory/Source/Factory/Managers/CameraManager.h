@@ -17,7 +17,7 @@ public:
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void SelectCamera(int32 Index);
+	void SelectCamera(int32 Index) const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<AActor*> Cameras;

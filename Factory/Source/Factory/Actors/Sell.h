@@ -23,9 +23,9 @@ public:
 	void SetSelect(bool Select);	
 	void SetWorking(bool Working);
 
-	bool IsActive();
-	bool IsSelect();
-	bool IsWorking();
+	bool IsActive() const;
+	bool IsSelect() const;
+	bool IsWorking() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USceneComponent* TargetSceneComp;
@@ -62,7 +62,7 @@ public:
 	bool bRightWorkOut;
 
 public:
-	ADeliveryController* GetTargetDelivery();
+	ADeliveryController* GetTargetDelivery() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ADeliveryController* TargetDelivery;

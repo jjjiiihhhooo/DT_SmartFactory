@@ -21,6 +21,8 @@ public:
 	void SetItem(AItem* NewItem);
 
 public:
+	void MoveToIdlePos(float DeltaTime);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector SpawnPos;
 	
@@ -29,8 +31,8 @@ public:
 
 public:
 	void SetSelect(bool Select);
-	bool IsSelect();
-	bool IsReady();
+	bool IsSelect() const;
+	bool IsReady() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	AItem* Item;

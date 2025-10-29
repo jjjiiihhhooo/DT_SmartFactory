@@ -18,17 +18,14 @@ void ACameraManager::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void ACameraManager::SelectCamera(int32 Index)
+void ACameraManager::SelectCamera(int32 Index) const
 {
 	if (Cameras.IsValidIndex(Index) && Cameras[Index] != nullptr)
 	{
 		APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 
-		UE_LOG(LogTemp, Warning, TEXT("Camera Changed to %s"), *Cameras[Index]->GetName());
-
 		if (PlayerController)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("PlayerController"));
 			PlayerController->SetViewTargetWithBlend(Cameras[Index], CameraBlendTime);
 		}
 	}

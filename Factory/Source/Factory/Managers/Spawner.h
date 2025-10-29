@@ -49,7 +49,7 @@ public:
 	void ReturnItem(AItem* Item);
 	void ReturnWheel(AActor* Wheel);
 
-	int32 GetCount();
+	int32 GetCount() const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")
 	TSubclassOf<ACharacter> DeliveryClass;

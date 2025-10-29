@@ -158,7 +158,7 @@ void ASpawner::ReturnWheel(AActor* Wheel)
 	WheelEnqueue(Wheel);
 }
 
-int32 ASpawner::GetCount()
+int32 ASpawner::GetCount() const
 {
 	return Count;
 }

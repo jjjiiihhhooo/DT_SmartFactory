@@ -46,15 +46,15 @@ public:
 	TArray<FVector> TargetArray;
 
 private:
-	FVector GetCurrentTarget();
-	int32 GetCurrentTargetIndex();
+	FVector GetCurrentTarget() const;
+	int32 GetCurrentTargetIndex() const;
 
 	ECurrentMoveState CurrentMoveState;
 
 public:
 	void SetTargetItemPos(AItemPos* ItemPos);
 
-	AItem* GetCurItem();
+	AItem* GetCurItem() const;
 
 	UPROPERTY()
 	AItemPos* TargetItemPos;
@@ -72,10 +72,10 @@ public:
 	void SetMove(bool Move);
 
 private:
-	bool IsMove();
+	bool IsMove() const;
 
 	bool bMove;
 
 public:
-	AManager* GetManager();
+	AManager* GetManager() const;
 };

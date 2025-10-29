@@ -36,7 +36,7 @@ void ADeliveryController::Tick(float DeltaTime)
 
 void ADeliveryController::AIMoveToTarget()
 {
-	EPathFollowingRequestResult::Type MoveResult = MoveToLocation(GetCurrentTarget(), 5.0f);
+	EPathFollowingRequestResult::Type MoveResult = MoveToLocation(GetCurrentTarget(), 30.0f);
 }
 
 void ADeliveryController::InterpMoveToTarget(float DeltaTime)
@@ -57,11 +57,14 @@ void ADeliveryController::InterpMoveToTarget(float DeltaTime)
 
 void ADeliveryController::MoveResult()
 {
-	switch (CurrentMoveState)
+	switch (CurrentMoveState) //현재 상태의 일을 끝냈을 때
 	{
 		case ECurrentMoveState::MovingToIdlePos:
 		{
 			SetMoveState(ECurrentMoveState::MovingToItemPos);
+
+			GetCharacter()->SetActorRotation(FRotator::ZeroRotator);
+
 			AIMoveToTarget();
 
 			break;
@@ -76,6 +79,9 @@ void ADeliveryController::MoveResult()
 			TargetItemPos->SetSelect(false);
 
 			SetMoveState(ECurrentMoveState::MovingToTargetPos);
+
+			GetCharacter()->SetActorRotation(FRotator::ZeroRotator);
+
 			AIMoveToTarget();
 			break;
 		}
@@ -98,7 +104,6 @@ void ADeliveryController::MoveResult()
 			SetMove(false);
 			SetMoveState(ECurrentMoveState::MovingToWorkOutPos);
 
-
 			TargetSell->ActionStart();
 
 			break;
@@ -113,6 +118,8 @@ void ADeliveryController::MoveResult()
 			FVector Target = GetManager()->GetEndAreaClosestPoint(Cur);
 
 			SetTargetPos(CurrentMoveState, Target);
+
+			GetCharacter()->SetActorRotation(FRotator::ZeroRotator);
 
 			AIMoveToTarget();
 
@@ -158,6 +165,22 @@ void ADeliveryController::OnMoveCallback(FAIRequestID RequestID, const FPathFoll
 	{
 		MoveResult();
 	}
+	else if(Result.Code == EPathFollowingResult::Aborted)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("이동 취소"));
+	}
+	else if (Result.Code == EPathFollowingResult::Blocked)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("이동 막힘"));
+	}
+	else if (Result.Code == EPathFollowingResult::OffPath)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("경로 이탈"));
+	}
+	else if (Result.Code == EPathFollowingResult::Invalid)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("이동 불가"));
+	}
 }
 
 void ADeliveryController::SetMoveState(ECurrentMoveState MoveState)
@@ -170,12 +193,12 @@ void ADeliveryController::SetTargetPos(ECurrentMoveState MoveState, FVector Pos)
 	TargetArray[(int32)MoveState] = Pos;
 }
 
-FVector ADeliveryController::GetCurrentTarget()
+FVector ADeliveryController::GetCurrentTarget() const
 {
 	return TargetArray[GetCurrentTargetIndex()];
 }
 
-int32 ADeliveryController::GetCurrentTargetIndex()
+int32 ADeliveryController::GetCurrentTargetIndex() const
 {
 	return (int32)CurrentMoveState;
 }
@@ -186,7 +209,7 @@ void ADeliveryController::SetTargetItemPos(AItemPos* ItemPos)
 	SetTargetPos(ECurrentMoveState::MovingToItemPos, ItemPos->IdlePos);
 }
 
-AItem* ADeliveryController::GetCurItem()
+AItem* ADeliveryController::GetCurItem() const
 {
 	return CurAttachedItem;
 }
@@ -206,12 +229,12 @@ void ADeliveryController::SetMove(bool Move)
 	bMove = Move;
 }
 
-bool ADeliveryController::IsMove()
+bool ADeliveryController::IsMove() const
 {
 	return bMove;
 }
 
-AManager* ADeliveryController::GetManager()
+AManager* ADeliveryController::GetManager() const
 {
 	AActor* ManagerActor = UGameplayStatics::GetActorOfClass(GetWorld(), AManager::StaticClass());
 	AManager* Manager = Cast<AManager>(ManagerActor);
