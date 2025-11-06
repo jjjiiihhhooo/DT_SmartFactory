@@ -23,6 +23,9 @@ public:
 	virtual void BeginPlay() override;
 
 public:
+	void ExitDataManager();
+
+public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ASpawner* Spawner;
 

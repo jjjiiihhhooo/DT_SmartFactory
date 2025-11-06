@@ -60,6 +60,11 @@ void AManager::Run(float DeltaTime)
 	}
 }
 
+void AManager::Exit()
+{
+	DataManager->ExitDataManager();
+	Spawner->ExitSpawner();
+}
 
 FVector AManager::GetEndAreaClosestPoint(const FVector& InputPoint) const
 {

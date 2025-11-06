@@ -99,6 +99,12 @@ void ASell::SetRightWorkOut(bool WorkOut)
 	bRightWorkOut = WorkOut;
 }
 
+void ASell::NullRobotArms()
+{
+	LeftRobotArm = nullptr;
+	RightRobotArm = nullptr;
+}
+
 ADeliveryController* ASell::GetTargetDelivery() const
 {
 	return TargetDelivery;

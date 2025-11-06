@@ -18,6 +18,9 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	void ExitSpawner();
+
 private:
 	void InitPool();
 	void CreateDelivery();

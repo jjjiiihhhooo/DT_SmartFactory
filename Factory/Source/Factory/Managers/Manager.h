@@ -24,6 +24,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Run(float DeltaTime);
 
+	UFUNCTION(BlueprintCallable)
+	void Exit();
 public:
 	FVector GetEndAreaClosestPoint(const FVector& InputPoint) const;
 

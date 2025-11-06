@@ -24,6 +24,28 @@ void ASpawner::Tick(float DeltaTime)
 
 }
 
+void ASpawner::ExitSpawner()
+{
+	for (UObject* Obj : AllPoolArray)
+	{
+		AActor* PooledActor = Cast<AActor>(Obj);
+		/*if (PooledActor && !PooledActor->IsPendingKillEnabled())
+		{
+			PooledActor->Destroy();
+		}*/
+
+		if (PooledActor && !PooledActor->IsGarbageEliminationEnabled())
+		{
+			PooledActor->Destroy();
+		}
+	}
+
+	DeliveryQueue.Empty();
+	ItemQueue.Empty();
+	WheelQueue.Empty();
+	AllPoolArray.Empty();
+}
+
 void ASpawner::InitPool()
 {
 	for (int32 i = 0; i < Count; i++)

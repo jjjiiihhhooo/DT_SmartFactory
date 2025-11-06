@@ -20,6 +20,35 @@ FACTORY_API UClass* Z_Construct_UClass_ASpawner_NoRegister();
 UPackage* Z_Construct_UPackage__Script_Factory();
 // ********** End Cross Module References **********************************************************
 
+// ********** Begin Class AManager Function Exit ***************************************************
+struct Z_Construct_UFunction_AManager_Exit_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Managers/Manager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AManager_Exit_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AManager, nullptr, "Exit", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AManager_Exit_Statics::Function_MetaDataParams), Z_Construct_UFunction_AManager_Exit_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AManager_Exit()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AManager_Exit_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AManager::execExit)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->Exit();
+	P_NATIVE_END;
+}
+// ********** End Class AManager Function Exit *****************************************************
+
 // ********** Begin Class AManager Function Run ****************************************************
 struct Z_Construct_UFunction_AManager_Run_Statics
 {
@@ -114,6 +143,7 @@ void AManager::StaticRegisterNativesAManager()
 {
 	UClass* Class = AManager::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "Exit", &AManager::execExit },
 		{ "Run", &AManager::execRun },
 		{ "SetReady", &AManager::execSetReady },
 	};
@@ -169,6 +199,7 @@ struct Z_Construct_UClass_AManager_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AManager_Exit, "Exit" }, // 3966559876
 		{ &Z_Construct_UFunction_AManager_Run, "Run" }, // 3774912784
 		{ &Z_Construct_UFunction_AManager_SetReady, "SetReady" }, // 2950801141
 	};
@@ -221,10 +252,10 @@ AManager::~AManager() {}
 struct Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AManager, AManager::StaticClass, TEXT("AManager"), &Z_Registration_Info_UClass_AManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AManager), 935100253U) },
+		{ Z_Construct_UClass_AManager, AManager::StaticClass, TEXT("AManager"), &Z_Registration_Info_UClass_AManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AManager), 1009366530U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_2295923998(TEXT("/Script/Factory"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_1716582012(TEXT("/Script/Factory"),
 	Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h__Script_Factory_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

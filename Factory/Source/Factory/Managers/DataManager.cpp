@@ -18,6 +18,21 @@ void ADataManager::BeginPlay()
 	Super::BeginPlay();
 }
 
+void ADataManager::ExitDataManager()
+{
+	OnOrderCountUpdate.Clear();
+	OnDeliveryCountUpdate.Clear();
+	OnCompletedCountUpdate.Clear();
+
+	for(ASell* Sell : SellArray)
+	{
+		if(Sell)
+		{
+			Sell->NullRobotArms();
+		}
+	}
+}
+
 bool ADataManager::IsControllerExist() const
 {
 	return ReadyController != nullptr;

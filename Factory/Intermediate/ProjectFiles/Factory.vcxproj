@@ -252,7 +252,6 @@
     <None Include="..\..\Factory.uproject"/>
     <None Include="..\..\Source\Factory.Target.cs"/>
     <None Include="..\..\Source\FactoryEditor.Target.cs"/>
-    <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>

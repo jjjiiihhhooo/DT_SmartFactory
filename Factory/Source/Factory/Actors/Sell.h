@@ -52,6 +52,8 @@ public:
 	void SetLeftWorkOut(bool WorkOut);
 	void SetRightWorkOut(bool WorkOut);
 
+	void NullRobotArms();
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ARobotArm* LeftRobotArm;
 

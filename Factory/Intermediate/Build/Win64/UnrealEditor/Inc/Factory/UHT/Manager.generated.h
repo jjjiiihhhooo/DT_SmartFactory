@@ -19,6 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class AManager *****************************************************************
 #define FID_JIHO_UE5_DT_SmartFactory_Factory_Source_Factory_Managers_Manager_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSetReady); \
+	DECLARE_FUNCTION(execExit); \
 	DECLARE_FUNCTION(execRun);
 
 
